@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Instant Updates",
-  description: "Instant Updates is a next app which provides latest news",
+  description: "Instant Updates is a next app which provides latest news to visitos",
 };
 
 
