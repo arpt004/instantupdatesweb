@@ -1,0 +1,2 @@
+export const USER_DATA = 'USER_DATA';
+export const SELECTED_PROJECT = 'SELECTED_PROJECT';

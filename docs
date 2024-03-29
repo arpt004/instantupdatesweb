@@ -1,0 +1,21 @@
+
+
+
+---- Vercel blob
+
+-> npm i -g vercel
+->vercel link
+    - login with github
+    - press Y to setup 
+    - select scope 
+    - link project by pressing Y
+
+PS C:\Users\Arpit\D\coding\react-next\instant-updates-web\instantupdatesweb> vercel link    
+Vercel CLI 33.6.1
+? Set up “~\D\coding\react-next\instant-updates-web\instantupdatesweb”? [Y/n] y
+? Which scope should contain your project? Arpit Jain's projects
+? Found project “arpit-jains-projects-500a4dab/instantupdatesweb”. Link to it? [Y/n] y
+✅  Linked to arpit-jains-projects-500a4dab/instantupdatesweb (created .vercel and added it to .gitignore)
+PS C:\Users\Arpit\D\coding\react-next\instant-updates-web\instantupdatesweb> 
+
+-> vercel env pull
