@@ -1,0 +1,21 @@
+.container{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0 2rem;
+    border-radius: 8px;
+}
+.close{
+    background: transparent;
+    border: none;
+    color: #fff;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.close:hover{
+    font-weight: 600;
+}

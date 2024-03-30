@@ -1,0 +1,12 @@
+.container{
+    display: flex;
+    padding: 0 1rem;
+}
+.back{
+    width: 50%;
+    text-align: left;
+}
+.uploadType{
+    width: 50%;
+    text-align: right;
+}

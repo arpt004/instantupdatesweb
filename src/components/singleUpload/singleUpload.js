@@ -1,0 +1,110 @@
+'use client'
+
+import { useState } from 'react';
+import Button from '../ui/button';
+import Input from '../ui/input';
+import Select from '../ui/select';
+import TextArea from '../ui/textarea';
+import UploadHeader from '../ui/uploadHeader/uploadHeader';
+import classes from './singleUpload.module.css';
+import { categories } from '@/data/allCategories';
+import Loader from '../common/Loader/loader';
+import Message from '../common/Message/message';
+import { setMessageDetails } from '@/components/utils/utils';
+
+
+
+export default function SingleUpload() {
+
+  const [formData, setFromData] = useState({})
+  const [imageFile, setImageFile] = useState();
+  const [imageFilename, setImageFilename] = useState('');
+  const [loader, setLoader] = useState(false);
+  const [message, setMessage] = useState(false);
+  const [messageData, setMessageData] = useState({});
+
+  async function handleSubmit() {
+    setLoader(true);
+    try{
+      const uploadResponse = await fetch(`/api/uploadImage?filename=${imageFilename}`,
+        {
+          method: 'POST',
+          body: imageFile,
+        },
+      );
+      if(uploadResponse.ok){
+        const res = await uploadResponse.json()
+        const getFormData = formData;
+        getFormData['image'] = res.url
+        const responseInsertOne = await fetch( `/api/insertOne`, 
+          {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(getFormData),
+          },
+        );
+        console.log(responseInsertOne)
+        if(responseInsertOne.ok){
+          setLoader(false);
+          setFromData({});
+          setMessageDetails('success', 'Successfully insert the data', setMessage, setMessageData);
+        }else{
+          setLoader(false);
+          setMessageDetails('error', 'Successfully insert the data', setMessage, setMessageData);
+        }
+      }else {
+        setLoader(false);
+        setMessageDetails('error', 'Failed to upload the image', setMessage, setMessageData);
+      }
+    }catch(error) {
+      console.log(error);
+      setLoader(false);
+      setMessageDetails('error', 'failed to insert the data', setMessage, setMessageData);
+    }
+    
+  }
+
+  function handleImage(e) {
+    console.log(e.target.files[0])
+    setImageFile(e.target.files[0])
+    setImageFilename(e.target.files[0].name)
+  }
+
+  if(loader){
+    return <Loader />
+  }
+
+
+  return (
+    <div className={classes.container}>
+      <UploadHeader uploadType={'single'}/>
+
+      <form action={handleSubmit} className={classes.form}>
+          <Input label={'title'} placeholder={'Enter Title'} type={'text'} formData={formData} setFromData={setFromData}/>
+          <Select label={'category'} categories={categories} formData={formData} setFromData={setFromData} />
+          <TextArea label={'description'} placeholder={'Enter Description'} formData={formData} setFromData={setFromData} />
+          <Input label={'source'} placeholder={'Enter Source'} type={'text'} formData={formData} setFromData={setFromData}/>
+          <Input label={'source_link'} placeholder={'Enter Source Url'} type={'text'} formData={formData} setFromData={setFromData}/>
+
+          <div className={classes.image_container}>
+            <input className={classes.image} placeholder={'Upload Image'} type={'file'} 
+              accept="image/png, image/gif, image/jpeg"  required
+              onChange={handleImage}
+            />
+          </div>
+
+          <div className={classes.submit}>
+            <Button text={'submit'} />  
+          </div>
+      </form>
+
+      <button onClick={() => { setFromData({}); console.log('formData'); console.log(formData) } }> click </button>
+
+      { message && <Message type={messageData.type} message={messageData.message} onClose={() => setMessage(false)}/>}
+      
+    </div>
+  )
+}

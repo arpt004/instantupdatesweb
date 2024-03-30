@@ -1,0 +1,13 @@
+.container{
+    margin: 1rem 5rem;
+}
+.form{
+    padding: 1rem;
+}
+.image_container{
+    text-align: left;
+}
+.submit{
+    margin-top: 1rem;
+    text-align: right;
+}

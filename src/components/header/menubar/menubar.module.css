@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    margin: 1rem 5rem;
+}
+.search{
+    padding-left: 1rem;
+    width: 33%;
+    text-align: left;
+}
+.search_btn{
+    background: transparent;
+    border: none;
+}
+.search_btn:focus-visible{
+    outline: none;
+}
+.header{
+    width: 33%;
+}
+.header h2{
+    margin: 0;
+}
+.link{
+    width: 33%;
+    text-align: right;
+}
