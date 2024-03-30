@@ -1,16 +1,15 @@
 import { sql } from '@vercel/postgres';
 import { NextResponse } from 'next/server';
-import { revalidateTag } from 'next/cache';
-
+// import { revalidateTag } from 'next/cache';
 
 export async function GET(request) { 
   try {
-    const tag = request.nextUrl.searchParams.get('tag');
-    revalidateTag(tag);
+    // const tag = request.nextUrl.searchParams.get('tag');
+    // revalidateTag(tag);
     
     // ********************* // Fetch query
     const data = await sql`
-      SELECT id, title, source, source_link, category, image, time, description
+      SELECT id, title, source, source_link, category, image, time, description, detail_description
       FROM newsdata
       ORDER BY time DESC;
     `;  

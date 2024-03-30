@@ -2,9 +2,12 @@
 
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
+
 import classes from './body.module.css';
 import NewsList from './newsList/newsList';
 import Notes from './notes/notes';
+import Loader from '../common/Loader/loader';
+import Message from '../common/Message/message';
 
 const newsData = [
     {
@@ -48,25 +51,34 @@ const newsData = [
     },
 ]
 
-
 export default function Body() {
 
     const [news, setNews] = useState([]);
+    const [loader, setLoader] = useState(false);
+    const [message, setMessage] = useState(false);
+    const [messageData, setMessageData] = useState({});
+
     const router = useSearchParams();
     console.log(router.get('category'))
 
     async function fetchNews() {
+        setLoader(true)
         try{
-            const response = await fetch( `/api/fetchAll`, { next: { revalidate: 5 } } );
-            // const response = await fetch( `/api/fetchAll`, { cache: 'no-store' } );
+            // const response = await fetch( `/api/fetchAll`, { next: { revalidate: 5 } } );
+            const response = await fetch( `/api/fetchAll`, { cache: 'no-store' } );
+            // const response = await fetch( `/api/fetchAll`, { cache: 'force-cache'} );
+            // const response = await fetch( `/api/fetchAll`);
+
             console.log(response)
             if(response.ok) {
                 const res = await response.json();
                 setNews(res)
+                setLoader(false)
                 console.log(res)
             }
         }catch(error) {
-            console.log(error)
+            console.log(error);
+            setLoader(false);
         }
     }
 
@@ -74,10 +86,18 @@ export default function Body() {
         fetchNews()
     },[])
 
+
+    if(loader){
+        return <Loader />
+    }
+
     return(
         <div className={classes.container}> 
             <Notes />
-            <NewsList newsData={news} setNews={setNews} />
+            <NewsList newsData={news} setNews={setNews} setMessage={setMessage} setMessageData={setMessageData} />
+
+            { message && <Message type={messageData.type} message={messageData.message} onClose={() => setMessage(false)}/>}
+
         </div>
     )
 }
