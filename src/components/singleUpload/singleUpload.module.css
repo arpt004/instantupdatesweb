@@ -1,8 +1,8 @@
 .container{
-    margin: 1rem 5rem;
+    margin: 1% 5%;
 }
 .form{
-    padding: 1rem;
+    padding: 1%;
 }
 .image_container{
     text-align: left;
@@ -10,4 +10,12 @@
 .submit{
     margin-top: 1rem;
     text-align: right;
+}
+
+/* Media query */
+@media screen and (max-width: 700px) {
+    .submit{
+        margin: 1rem;
+        text-align: center;
+    }
 }

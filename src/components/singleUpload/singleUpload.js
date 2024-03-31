@@ -53,7 +53,7 @@ export default function SingleUpload() {
           setMessageDetails('success', 'Successfully insert the data', setMessage, setMessageData);
         }else{
           setLoader(false);
-          setMessageDetails('error', 'Successfully insert the data', setMessage, setMessageData);
+          setMessageDetails('error', 'failed to insert the data', setMessage, setMessageData);
         }
       }else {
         setLoader(false);
