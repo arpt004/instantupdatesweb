@@ -1,8 +1,20 @@
 .container{
-    margin: 2rem 6rem;
+    margin: 2% 6%;
 }
 .unordered_list{
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
     justify-content: space-evenly;
+    padding: 0;
+    text-align: center;
+}
+
+
+/* Media query */
+@media screen and (max-width: 700px) {
+    .unordered_list li{
+        flex: 0 0 33%;
+        margin-bottom: 0.5rem;
+    }
 }
