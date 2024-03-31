@@ -2,6 +2,8 @@ import Link from 'next/link';
 import classes from './menubar.module.css';
 import Input from '@/components/ui/input';
 import Button from '@/components/ui/button';
+import Image from 'next/image';
+import CentreTitle from './CentreTitle';
 
 export default function Menubar() {
     return(
@@ -17,7 +19,7 @@ export default function Menubar() {
             </div>
 
             <div className={classes.header}>
-                <h2> Menubar </h2>
+                <CentreTitle />
             </div>
 
             <div className={classes.link}>

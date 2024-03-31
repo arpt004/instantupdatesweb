@@ -1,0 +1,151 @@
+.container{
+    padding: 1rem;
+}
+
+/* Upload */
+.card{
+    padding: 1rem;
+    /* box-shadow: 0 0 0.4rem #C8C8C8; */
+    border-radius: 0.2rem;
+    overflow: hidden;
+    border: 1px solid #C8C8C8;
+}
+.card p{
+    font-weight: bold;
+    color: #0086fe;
+}
+.card .drag_area{
+    height:8rem;
+    border-radius: 0.2rem;
+    border: 0.1rem dashed #C8C8C8;
+    color: #0086fe;
+    /* background: #f4f3f9; */
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    -webkit-user-select: none;
+    /* margin-top: 10px; */
+}
+.card .drag_area .visible{
+    font-size: 18px;
+}
+.card .select{
+    color: #5256ad;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.card .select:hover{
+    opacity: 0.6;
+}
+.card .container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+.card input, 
+.card .drag_area .on_drop, 
+.card .drag_area.dragover .visible{
+    display: none;
+}
+.drag_button_text{
+    margin: auto;
+    text-align: center;
+    margin-top: 2rem;
+    width: 30%;
+}
+.drag_button_text button{
+    color: #4096ff;
+    border-color: #4096ff;
+    margin-left: 10px;
+    background: rgba(49, 121, 190, 0.1);
+    border: 2px solid #3179be;
+    border-radius: 14px;
+    height: 54px;
+    padding: 10px 24px;
+    color: #3179be;
+    font-weight: 600;
+    font-size: 16px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.drag_text{
+    text-align: center;
+    font-weight: 500;
+    font-size:0.8rem;
+    color: #989898 !important;
+}
+
+/* after upload */
+
+.cp_interal_label{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.cp_card_after_upload{
+    text-align: center;
+    align-items: center;
+}
+.cp_after_file_upload{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+.cp_image_after_upload{
+    display: flex;
+    flex-shrink: 0;
+    border-radius: 58.5px;
+    background: var(--green-green-10, #EBFFF5);
+    text-align: center;
+    align-items: center;
+    padding: 2rem;
+}
+.cp_filename_after_upload{
+    color: var(--Gray-gray-100, #202020);
+    text-align: center;
+    display:flex;
+    gap:10;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.cp_filename_after_upload button{
+    display: flex;
+    width: 18px;
+    height: 18px;
+    padding: 3.375px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 24px;
+    background: var(--red-red-100, #D71500);
+    border: none;
+    margin-left: 0.2rem;
+}
+
+.save_button{
+    text-align: right;
+    margin: 2rem 0;
+}
+.disabled{
+    pointer-events: none;
+    outline: none;
+    opacity: 0.5;
+}
+.error_msg{
+    color: red;
+    text-align: center;
+}

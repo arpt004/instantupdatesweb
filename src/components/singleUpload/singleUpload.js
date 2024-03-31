@@ -11,6 +11,7 @@ import { categories } from '@/data/allCategories';
 import Loader from '../common/Loader/loader';
 import Message from '../common/Message/message';
 import { setMessageDetails } from '@/components/utils/utils';
+import CentreTitle from '../header/menubar/CentreTitle';
 
 
 
@@ -79,32 +80,36 @@ export default function SingleUpload() {
 
 
   return (
-    <div className={classes.container}>
-      <UploadHeader uploadType={'single'}/>
+    <>
+      <CentreTitle />
 
-      <form action={handleSubmit} className={classes.form}>
-          <Input label={'title'} placeholder={'Enter Title'} type={'text'} formData={formData} setFromData={setFromData}/>
-          <Select label={'category'} categories={categories} formData={formData} setFromData={setFromData} />
-          <TextArea label={'description'} placeholder={'Enter Description'} formData={formData} setFromData={setFromData} />
-          <Input label={'source'} placeholder={'Enter Source'} type={'text'} formData={formData} setFromData={setFromData}/>
-          <Input label={'source_link'} placeholder={'Enter Source Url'} type={'text'} formData={formData} setFromData={setFromData}/>
+      <div className={classes.container}>
+        <UploadHeader uploadType={'single'}/>
 
-          <div className={classes.image_container}>
-            <input className={classes.image} placeholder={'Upload Image'} type={'file'} 
-              accept="image/png, image/gif, image/jpeg"  required
-              onChange={handleImage}
-            />
-          </div>
+        <form action={handleSubmit} className={classes.form}>
+            <Input label={'title'} placeholder={'Enter Title'} type={'text'} formData={formData} setFromData={setFromData}/>
+            <Select label={'category'} categories={categories} formData={formData} setFromData={setFromData} />
+            <TextArea label={'description'} placeholder={'Enter Description'} formData={formData} setFromData={setFromData} />
+            <Input label={'source'} placeholder={'Enter Source'} type={'text'} formData={formData} setFromData={setFromData}/>
+            <Input label={'source_link'} placeholder={'Enter Source Url'} type={'text'} formData={formData} setFromData={setFromData}/>
 
-          <div className={classes.submit}>
-            <Button text={'submit'} />  
-          </div>
-      </form>
+            <div className={classes.image_container}>
+              <input className={classes.image} placeholder={'Upload Image'} type={'file'} 
+                accept="image/png, image/gif, image/jpeg"  required
+                onChange={handleImage}
+              />
+            </div>
 
-      <button onClick={() => { setFromData({}); console.log('formData'); console.log(formData) } }> click </button>
+            <div className={classes.submit}>
+              <Button text={'submit'} />  
+            </div>
+        </form>
 
-      { message && <Message type={messageData.type} message={messageData.message} onClose={() => setMessage(false)}/>}
-      
-    </div>
+        <button onClick={() => { setFromData({}); console.log('formData'); console.log(formData) } }> click </button>
+
+        { message && <Message type={messageData.type} message={messageData.message} onClose={() => setMessage(false)}/>}
+        
+      </div>
+    </>
   )
 }
