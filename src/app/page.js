@@ -3,10 +3,7 @@ import Main from "@/components/main/main";
 
 // import AvatarUploadPage from "@/components/practice/AvatarUploadPage"; 
 
-export const dynamic = 'force-dynamic';
-
 export default function Home() {
-
   return (
     <main className={styles.main}>
       <Main />

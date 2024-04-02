@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
+// import { useSearchParams } from 'next/navigation';
 
 import classes from './body.module.css';
 import NewsList from './newsList/newsList';
@@ -58,14 +58,18 @@ export default function Body() {
     const [message, setMessage] = useState(false);
     const [messageData, setMessageData] = useState({});
 
-    const router = useSearchParams();
-    console.log(router.get('category'))
+    // const router = useSearchParams();
+    // console.log(router.get('newsdata'))
 
-    async function fetchNews() {
+
+    async function fetchNewsData() {
         setLoader(true)
+        // revalidateTag('newsdata');
+
         try{
-            // const response = await fetch( `/api/fetchAll`, { next: { revalidate: 5 } } );
-            const response = await fetch( `/api/fetchAll`, { cache: 'no-store' } );
+            const response = await fetch( `/api/fetchAll`, { next: { tags: ['newsdata'] } } );
+            // const response = await fetch( `/api/fetchAll`, { next: { revalidate: 2 } } );
+            // const response = await fetch( `/api/fetchAll`, { cache: 'no-store' } );
             // const response = await fetch( `/api/fetchAll`, { cache: 'force-cache'} );
             // const response = await fetch( `/api/fetchAll`);
 
@@ -83,7 +87,7 @@ export default function Body() {
     }
 
     useEffect(() => {
-        fetchNews()
+        fetchNewsData()
     },[])
 
 

@@ -82,10 +82,13 @@ export default function SingleUpload() {
   return (
     <>
       <CentreTitle />
+      <div className={classes.shadow}>
+        <div className={classes.container}>
+          <UploadHeader uploadType={'single'}/>
+        </div>
+      </div>
 
       <div className={classes.container}>
-        <UploadHeader uploadType={'single'}/>
-
         <form action={handleSubmit} className={classes.form}>
             <Input label={'title'} placeholder={'Enter Title'} type={'text'} formData={formData} setFromData={setFromData}/>
             <Select label={'category'} categories={categories} formData={formData} setFromData={setFromData} />

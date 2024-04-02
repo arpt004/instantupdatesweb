@@ -11,7 +11,7 @@ export default function Main() {
         <div className={classes.container}> 
             <Header />
             <Body />
-            <Link href={'/home'}> home </Link>
+            {/* <Link href={'/home'}> home </Link> */}
             <Footer />
         </div>
     )

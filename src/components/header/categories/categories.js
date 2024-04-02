@@ -8,7 +8,7 @@ export default function Categories() {
             <ul className={classes.unordered_list}>
                 { categories.map( (category) => {
                     return(
-                        <li> <Link href={'?category='+category}> {category.toUpperCase()} </Link> </li>
+                        <li> <Link href={'?category='+category} className={classes.link}> {category.toUpperCase()} </Link> </li>
                     )
                   })
                 }

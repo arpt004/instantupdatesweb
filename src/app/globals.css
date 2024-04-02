@@ -130,4 +130,5 @@ body{
   color: var(--ast-global-color-3);
   background-color: var(--ast-global-color-4);
   text-align: center;
+  margin: 0;
 }
