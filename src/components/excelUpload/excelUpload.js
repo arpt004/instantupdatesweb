@@ -11,10 +11,16 @@ export default function ExcelUpload() {
   const [userStoryData, setUserStoryData] = useState([])
 
   return (
-    <div className={classes.container}>
+    <>
       <CentreTitle />
-      <UploadHeader uploadType={'excel'}/>
-      <DragDropInput setUserStoryData={setUserStoryData}/>
-    </div>
+      <div className={classes.shadow}>
+        <div className={classes.container}>
+          <UploadHeader uploadType={'excel'}/>
+        </div>
+      </div>
+      <div className={classes.container}>
+        <DragDropInput setUserStoryData={setUserStoryData}/>
+      </div>
+    </>
   )
 }

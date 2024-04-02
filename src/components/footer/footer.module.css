@@ -1,4 +1,16 @@
 .container{
-    background: rgb(115, 115, 118);
-    border: 2px solid black;
+    box-shadow: 0px -2px 8px #888;
+}
+.footer{
+    padding: 0.5rem;
+}
+
+/* Media query */
+@media screen and (max-width: 700px) {
+    .footer{
+        padding: 0.2rem;
+    }
+    .footer p{
+        margin: 0rem;
+    }
 }

@@ -1,5 +1,9 @@
+.shadow{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 8px 10px 0px;
+    padding-bottom: 1rem;
+}
 .container{
-    margin: 1% 5%;
+    margin: 0% 5%;
 }
 .form{
     padding: 1%;

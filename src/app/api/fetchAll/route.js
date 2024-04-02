@@ -1,12 +1,10 @@
 import { sql } from '@vercel/postgres';
 import { NextResponse } from 'next/server';
-// import { revalidateTag } from 'next/cache';
+
+export const dynamic = 'force-dynamic';
 
 export async function GET(request) { 
   try {
-    // const tag = request.nextUrl.searchParams.get('tag');
-    // revalidateTag(tag);
-    
     // ********************* // Fetch query
     const data = await sql`
       SELECT id, title, source, source_link, category, image, time, description, detail_description
@@ -17,7 +15,7 @@ export async function GET(request) {
     const allNews = data.rows;    
     console.log(data)
     return NextResponse.json(allNews);
-
+    // return NextResponse.json({ revalidated: true, data: allNews});
   } catch (err) {
     console.error('Database Error:', err);
     throw new Error('Failed to fetch all news.');

@@ -5,3 +5,14 @@
     text-decoration: none;
     color: inherit;
 }
+.centerHeader{
+    margin-bottom: 0;
+}
+
+
+/* Media query */
+@media screen and (max-width: 700px) {
+    .centerHeader{
+        margin: 1rem;
+    }
+}

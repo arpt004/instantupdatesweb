@@ -9,7 +9,6 @@ export const metadata = {
   description: "Instant Updates is a next app which provides latest news to visitos",
 };
 
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
