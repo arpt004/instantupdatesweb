@@ -13,10 +13,9 @@
     text-decoration: none;
     color: var(--ast-global-color-3);
 }
-.link:focus, .link:focus-visible, .link:active, .link:hover{
-    color: var(--ast-global-color-1);
+.blue{
+    color: var(--ast-global-color-0);
 }
-
 /* Media query */
 @media screen and (max-width: 700px) {
     .unordered_list li{
