@@ -7,12 +7,12 @@ export default function UploadHeader({uploadType}) {
     <div className={classes.container}>
       <div className={classes.back}>
         <Link href={'/'}>
-            <Button text={'Back'} /> 
+          <Button text={'Back'} /> 
         </Link>
       </div>
       <div className={classes.uploadType}>
-        <Link href={ uploadType==='single' ? './excel-upload' : './single-upload' }>
-            <Button text={ uploadType==='single' ? 'Excel Upload':' Single Upload'} />
+        <Link href={ uploadType==='single' ? './excel-upload' : '/admin-control/single-upload' }>
+          <Button text={ uploadType==='single' ? 'Excel Upload':' Single Upload'} />
         </Link>
       </div>
     </div>

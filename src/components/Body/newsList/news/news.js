@@ -63,12 +63,13 @@ export default function News({news, setNews, setMessage, setMessageData}) {
                     src={news.image}
                     alt="Picture of the author" 
                     className={classes.image}
+                    unoptimized
                 />
             </div>
             <div className={classes.news}>
                 <h3 className={classes.title}> {news.title} </h3>
                 <h6> {news.source} </h6>
-                <p> {news.description} </p>
+                <p className={classes.para}> {news.description} </p>
             </div>
         </div>
     )

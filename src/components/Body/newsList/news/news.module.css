@@ -22,6 +22,7 @@
 }
 .imageContainer{
     border-radius: 8px;
+    height: 40vh;
 }
 .image{
     border-radius: 8px;
@@ -29,7 +30,13 @@
     width: 100%;
 }
 .news{
+    height: 60vh;
     margin-left: 1rem;
     text-align: left;
     padding: 1rem;
+    overflow: hidden;
+}
+.para{
+    overflow: hidden;
+    height: 38vh;
 }

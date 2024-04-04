@@ -5,6 +5,10 @@
 .container{
     margin: 0% 5%;
 }
+.fetchApi{
+    padding: 1%;
+    text-align: right;
+}
 .form{
     padding: 1%;
 }
