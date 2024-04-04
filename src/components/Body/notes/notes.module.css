@@ -4,6 +4,7 @@
 }
 .notestext{
     margin: 0;
+    padding: 1rem;
 }
 .carousel{
     min-height: 5rem;
