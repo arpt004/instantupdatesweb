@@ -12,6 +12,7 @@ import Loader from '../common/Loader/loader';
 import Message from '../common/Message/message';
 import { setMessageDetails } from '@/components/utils/utils';
 import CentreTitle from '../header/menubar/CentreTitle';
+import Link from 'next/link';
 
 
 
@@ -89,6 +90,13 @@ export default function SingleUpload() {
       </div>
 
       <div className={classes.container}>
+
+        <div className={classes.fetchApi}>
+          <Link href={ '/fetch-source-api' }>
+            <Button text={ 'Fetch World API'} />
+          </Link>
+        </div>
+
         <form action={handleSubmit} className={classes.form}>
             <Input label={'title'} placeholder={'Enter Title'} type={'text'} formData={formData} setFromData={setFromData}/>
             <Select label={'category'} categories={categories} formData={formData} setFromData={setFromData} />
@@ -108,7 +116,7 @@ export default function SingleUpload() {
             </div>
         </form>
 
-        <button onClick={() => { setFromData({}); console.log('formData'); console.log(formData) } }> click </button>
+        {/* <button onClick={() => { setFromData({}); console.log('formData'); console.log(formData) } }> click </button> */}
 
         { message && <Message type={messageData.type} message={messageData.message} onClose={() => setMessage(false)}/>}
         

@@ -1,0 +1,21 @@
+.shadow{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 8px 10px 0px;
+    padding-bottom: 1rem;
+}
+.container{
+    margin: 0% 5%;
+}
+.table_container{
+    text-align: left;
+    margin: 3% 5%;
+}
+.table{
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--ast-global-color-3);
+    border-radius: 8px;
+}
+.table_data, .table_header{
+    color: var(--ast-global-color-3);
+    padding: 0.4%;
+}
