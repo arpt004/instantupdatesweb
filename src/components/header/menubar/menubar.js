@@ -1,14 +1,31 @@
 'use client'
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import classes from './menubar.module.css';
 import Button from '@/components/ui/button';
 import CentreTitle from './CentreTitle';
+import { valdiateUser } from '@/components/Auth/authGuard';
 
 export default function Menubar() {
 
     const [searchIcon, setSearchIcon] = useState(true);
+    const [authenticate, setAuthenticate] = useState(false);
+
+    useEffect(() => {
+        const checkUser = valdiateUser();
+        if(checkUser){
+            setAuthenticate(true)
+        }else{
+            setAuthenticate(false)
+        }
+    })
+
+    function handleLogout() {
+        console.log('clicked');
+        sessionStorage.clear();
+        setAuthenticate(false);
+    }
 
     return(
         <div className={classes.shadow}>
@@ -37,7 +54,15 @@ export default function Menubar() {
                 </div>
 
                 <div className={classes.link}>
-                    {true && <Link href='/admin-control/single-upload'> <Button text={'Admin Control'}/>  </Link> }
+                    {authenticate ?
+                        <div className={classes.admin_control}>
+                            <Link href='/admin-control/single-upload'> <Button text={'Admin Control'}/>  </Link> 
+                            &nbsp;
+                            <Link href='/'> <Button text={'Logout'} onClick={handleLogout} /> </Link> 
+                        </div>
+                        :
+                        <Link href='/login'> <Button text={'Login'}/>  </Link> 
+                    }
                 </div>
             </div>
         </div>
