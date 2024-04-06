@@ -1,0 +1,22 @@
+.shadow{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 8px 10px 0px;
+    padding-bottom: 1rem;
+}
+.container{
+    margin: 0% 5%;
+}
+.back_container{
+    display: flex;
+    padding: 0 1rem;
+}
+.back{
+    width: 50%;
+    text-align: left;
+}
+
+/* Media query */
+@media screen and (max-width: 700px) {
+    .container{
+        margin: 0;
+    }
+}

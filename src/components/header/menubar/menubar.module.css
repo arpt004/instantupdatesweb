@@ -40,6 +40,9 @@
     width: 33%;
     text-align: right;
 }
+.admin_control{
+    display: inline-flex;
+}
 
 
 /* Media query */
@@ -59,5 +62,8 @@
     }
     .search_box{
         width: 90%;
+    }
+    .admin_control{
+        display: flex;
     }
 }

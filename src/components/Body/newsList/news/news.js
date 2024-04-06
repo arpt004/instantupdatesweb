@@ -1,14 +1,25 @@
 'use client'
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import classes from './news.module.css';
 import Loader from '@/components/common/Loader/loader';
 import { setMessageDetails } from '@/components/utils/utils';
+import { valdiateUser } from '@/components/Auth/authGuard';
 
 export default function News({news, setNews, setMessage, setMessageData}) {
 
-    const [loader, setLoader] = useState(false);    
+    const [loader, setLoader] = useState(false);
+    const [authenticate, setAuthenticate] = useState(false);
+
+    useEffect(() => {
+        const checkUser = valdiateUser();
+        if(checkUser){
+            setAuthenticate(true)
+        }else{
+            setAuthenticate(false)
+        }
+    })
 
     async function deleteNews(id) { 
         console.log('handle click')
@@ -51,7 +62,7 @@ export default function News({news, setNews, setMessage, setMessageData}) {
 
     return(
         <div className={classes.container} > 
-            {true &&
+            {authenticate &&
                 <div className={classes.remove}>
                     <button onClick={() => deleteNews(news.id)}> &times; </button>
                 </div>

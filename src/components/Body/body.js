@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react';
-import { useSearchParams, useRouter } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 
 import classes from './body.module.css';
 import NewsList from './newsList/newsList';
@@ -11,8 +11,6 @@ import Message from '../common/Message/message';
 
 
 export default function Body() {
-
-    const router = useRouter();
 
     const [news, setNews] = useState([]);
     const [newsCategory, setNewsCategory] = useState([]);
