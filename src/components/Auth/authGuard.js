@@ -4,9 +4,8 @@ import { useEffect, useState } from "react";
 
 export function valdiateUser() {
     const getAuthData = sessionStorage.getItem('auth')
-    const salt = '1413914!@#**756404$808&1412914_music_'
+    const salt = process.env.NEXT_PUBLIC_SALT;
 
-    console.log(getAuthData === salt)
     if(getAuthData === salt) 
         return true;
     
