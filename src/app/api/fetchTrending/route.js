@@ -2,17 +2,23 @@ import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
 
-
 async function fetchTrendingData() {
 
   try{
     const count = 20;
     const category = 'top_stories'
-    const response = await fetch( `https://m.inshorts.com/api/en/news?category=${category}&max_limit=${count}&include_card_data=true`);
+    const url = `https://m.inshorts.com/api/en/news?category=${category}&max_limit=${count}&include_card_data=true`;
+    
+    const response = await fetch(url, {
+      next: { revalidate: 0 } 
+    });
+
+  //  { cache: 'no-store' } ,
+  // { next: { revalidate: 10 } }
+  // https://m.inshorts.com/api/en/news?category=top_stories&max_limit=20&include_card_data=true
 
     if(response.ok) {
         const res = await response.json();
-        // formatCategoryData(res, paraCategory)
         const data = res.data.news_list
         const formattedData = []
 
@@ -32,7 +38,6 @@ async function fetchTrendingData() {
             "description":  eachNews.news_obj.content ? eachNews.news_obj.content : 'NA',
             "detail_description": null
           }
-
           formattedData.push(newsObject);
         });
         return formattedData;
