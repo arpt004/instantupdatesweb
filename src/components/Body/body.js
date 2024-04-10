@@ -32,6 +32,7 @@ export default function Body() {
         }
     }
 
+    // fetching Data from Postgress SQL Database
     async function fetchNewsData() {
         setLoader(true)
 
@@ -54,8 +55,27 @@ export default function Body() {
         }
     }
 
+    // fetching Data from trending topics
+    async function fetchTrendingData() {
+        setLoader(true)
+
+        try{
+            const response = await fetch( `/api/fetchTrending`, { cache: 'no-store' } );
+
+            if(response.ok) {
+                const res = await response.json();
+                formatCategoryData(res, paraCategory)
+                setLoader(false)
+            }
+        }catch(error) {
+            console.log(error);
+            setLoader(false);
+        }
+    }
+
     useEffect(() => {
-        fetchNewsData();
+        // fetchNewsData();
+        fetchTrendingData();
     }, [paraCategory])
 
 
