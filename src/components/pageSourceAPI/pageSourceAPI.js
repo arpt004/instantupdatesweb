@@ -31,7 +31,7 @@ function PageSourceAPI() {
                 const response = await fetch(url)
                 if(response.ok){
                     const res = await response.json()
-                    console.log(res.results)
+                    // console.log(res.results)
                     // setSourceData(res.data.news)
                     setLoader(false);
                     setSourceData(res.results);

@@ -16,10 +16,9 @@ export default function LoginForm() {
     async function handleFormSubmit() {
         setErrorMsg(null);
 
-        console.log(process.env)
-        const username  = 'admin@instantupdates.in';
-        const password  = 'admin123';
-        const salt = '1413914!@#**756404$808&1412914_music_';
+        const username  = process.env.NEXT_PUBLIC_USERNAME;
+        const password  = process.env.NEXT_PUBLIC_PASSWORD;
+        const salt = process.env.NEXT_PUBLIC_SALT;
 
         if(formData.email === username){
             if(formData.password === password){
