@@ -7,7 +7,7 @@ async function fetchTrendingData() {
   try{
     const count = 20;
     const category = 'top_stories'
-    const url = `https://m.inshorts.com/api/en/news?category=${category}&max_limit=${count}&include_card_data=true`;
+    const url = `https://m.inshorts.com/api/en/news?category=${category}&max_limit=${count}&include_card_data=true&randomParam=${new Date().getTime()}`;
     
     const response = await fetch(url, {
       next: { revalidate: 0 } 
