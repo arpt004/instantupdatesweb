@@ -72,7 +72,7 @@ export default function News({news, setNews, setMessage, setMessageData}) {
                     height={1}
                     width={1}   
                     src={news.image}
-                    alt="Picture of the author" 
+                    alt={news.title} 
                     className={classes.image}
                     unoptimized
                 />
