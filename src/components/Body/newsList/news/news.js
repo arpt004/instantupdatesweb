@@ -79,7 +79,7 @@ export default function News({news, setNews, setMessage, setMessageData}) {
             </div>
             <div className={classes.news}>
                 <h3 className={classes.title}> {news.title} </h3>
-                <h6> {news.source} </h6>
+                <h6> {news.source} - <span className={classes.author}> {news.author_name} </span> </h6>
                 <p className={classes.para}> {news.description} </p>
             </div>
         </div>
