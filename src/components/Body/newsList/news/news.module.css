@@ -39,6 +39,10 @@
 .para{
     overflow: auto;
     height: 30vh;
+    line-height: 20px;
+}
+.author{
+    font-weight: 500;
 }
 
 @media screen and (max-width: 900px) {
