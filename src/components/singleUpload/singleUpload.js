@@ -75,10 +75,26 @@ export default function SingleUpload() {
     setImageFilename(e.target.files[0].name)
   }
 
+   // push notifiation using expo server
+  async function sendPushNotificationHandler() {
+
+    try{
+      const res = await fetch('/api/notifyApp', {
+        method: 'post'
+      } )
+
+      if(res.ok){
+        console.log('Notified')
+      }
+    }catch(error){
+      console.log(error);
+    }
+
+  }
+
   if(loader){
     return <Loader />
   }
-
 
   return (
     <>
@@ -95,6 +111,7 @@ export default function SingleUpload() {
           <Link href={ '/fetch-source-api' }>
             <Button text={ 'Fetch World API'} />
           </Link>
+          <Button text={ 'Notify'} onClick={sendPushNotificationHandler} />
         </div>
 
         <form action={handleSubmit} className={classes.form}>
