@@ -24,6 +24,7 @@ export default function SingleUpload() {
   const [loader, setLoader] = useState(false);
   const [message, setMessage] = useState(false);
   const [messageData, setMessageData] = useState({});
+  const [notifyText, setNotifyText] = useState('');
 
   async function handleSubmit() {
     setLoader(true);
@@ -80,7 +81,8 @@ export default function SingleUpload() {
 
     try{
       const res = await fetch('/api/notifyApp', {
-        method: 'post'
+        method: 'post',
+        body: JSON.stringify({'text': notifyText})
       } )
 
       if(res.ok){
@@ -111,7 +113,12 @@ export default function SingleUpload() {
           <Link href={ '/fetch-source-api' }>
             <Button text={ 'Fetch World API'} />
           </Link>
-          <Button text={ 'Notify'} onClick={sendPushNotificationHandler} />
+          <div>
+            <input className={classes.input} type='text' placeholder='Enter Notify Text'  
+              value={notifyText} onChange={(e) => setNotifyText(e.target.value)}
+            />
+            <Button text={ 'Notify'} onClick={sendPushNotificationHandler} />
+          </div>
         </div>
 
         <form action={handleSubmit} className={classes.form}>

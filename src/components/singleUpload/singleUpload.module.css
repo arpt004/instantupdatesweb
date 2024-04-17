@@ -2,6 +2,17 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0px 8px 10px 0px;
     padding-bottom: 1rem;
 }
+.input{
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border: 2px solid var(--ast-global-color-8);
+    width: 100%;
+}
+.input:hover{
+    border: 2px solid var(--ast-global-color-3);
+}
 .container{
     margin: 0% 5%;
 }
