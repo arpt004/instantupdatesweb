@@ -10,6 +10,7 @@ export default function Main() {
     async function insert_push_key() {
 
         try{
+            // instantupdates.in/api/insert-push-key
             // Notification Push token for expo in mobile : ExponentPushToken[BHj3CCMmxO2DxISmfM8Kwl]
             // Notification Push token for android studio emulator : ExponentPushToken[25jUfPHtleWIrwD-jWVIXN]
             const deviceData = { pushKey : 'ExponentPushToken[25jUfPHtleWIrwD-jWVIXN]'}
