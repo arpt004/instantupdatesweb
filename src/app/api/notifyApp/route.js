@@ -2,7 +2,7 @@ import { sql } from '@vercel/postgres';
 import { NextResponse } from 'next/server';
 
 
-async function sendPushNotification(registered_ids) {
+async function sendPushNotification(registered_ids, text) {
   
   // try{
     // const res = await fetch('https://exp.host/--/api/v2/push/send', {
@@ -23,12 +23,13 @@ async function sendPushNotification(registered_ids) {
   // ]
 
   const fcm_server_key = process.env.SERVER_KEY;
+  const notifyText = text ? text : "Get updated with instant updates updated"
 
   const data = JSON.stringify({
     "registration_ids": registered_ids,
     "notification": {
       "title": "Instant Updates!!",
-      "body": "Get updated with instant updates updated"
+      "body": notifyText
     }
   });
 
@@ -58,7 +59,8 @@ async function sendPushNotification(registered_ids) {
 export async function POST(request) {
   
   try{
-
+    const body = await request.json()   
+    const text = body.text
     // ********************* // Fetch query
     const data = await sql`
       SELECT
@@ -68,7 +70,7 @@ export async function POST(request) {
 
     let pushkeys = []
     if(data && data.rows.length>0) pushkeys = data.rows.map((eachRow) => eachRow.pushkey);
-    const response = await sendPushNotification(pushkeys)
+    const response = await sendPushNotification(pushkeys, text)
 
     if(response) return NextResponse.json({ "Success": "pushed all notifications" })
     else return NextResponse.json({ "msg": "error in push notification" });
