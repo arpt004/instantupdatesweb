@@ -24,6 +24,7 @@ export default function SingleUpload() {
   const [loader, setLoader] = useState(false);
   const [message, setMessage] = useState(false);
   const [messageData, setMessageData] = useState({});
+  const [notifyTitle, setNotifyTitle] = useState('');
   const [notifyText, setNotifyText] = useState('');
 
   async function handleSubmit() {
@@ -82,7 +83,7 @@ export default function SingleUpload() {
     try{
       const res = await fetch('/api/notifyApp', {
         method: 'post',
-        body: JSON.stringify({'text': notifyText})
+        body: JSON.stringify({'title': notifyTitle, 'text': notifyText })
       } )
 
       if(res.ok){
@@ -114,7 +115,10 @@ export default function SingleUpload() {
             <Button text={ 'Fetch World API'} />
           </Link>
           <div>
-            <input className={classes.input} type='text' placeholder='Enter Notify Text'  
+            <input className={classes.input} type='text' placeholder='Title of Notification'  
+              value={notifyTitle} onChange={(e) => setNotifyTitle(e.target.value)}
+            />
+            <input className={classes.input} type='text' placeholder='Enter text to Notify'  
               value={notifyText} onChange={(e) => setNotifyText(e.target.value)}
             />
             <Button text={ 'Notify'} onClick={sendPushNotificationHandler} />
