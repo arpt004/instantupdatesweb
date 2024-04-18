@@ -3,7 +3,7 @@
 import Footer from '../footer/footer';
 import classes from './main.module.css';
 import Body from "../Body/body";
-import Header from "../header/header";
+// import Header from "../header/header";
 
 export default function Main() {
 
@@ -36,7 +36,7 @@ export default function Main() {
 
     return(
         <div className={classes.container}> 
-            <Header />
+            {/* <Header /> */}
             <Body />
             <Footer />
         </div>
