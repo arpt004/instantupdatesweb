@@ -24,6 +24,7 @@ export default function SingleUpload() {
   const [loader, setLoader] = useState(false);
   const [message, setMessage] = useState(false);
   const [messageData, setMessageData] = useState({});
+  const [triggerNotify, setTriggerNotify] = useState(false);
   const [notifyTitle, setNotifyTitle] = useState('');
   const [notifyText, setNotifyText] = useState('');
 
@@ -79,14 +80,15 @@ export default function SingleUpload() {
 
    // push notifiation using expo server
   async function sendPushNotificationHandler() {
-
     try{
       const res = await fetch('/api/notifyApp', {
         method: 'post',
         body: JSON.stringify({'title': notifyTitle, 'text': notifyText })
       } )
 
-      if(res.ok){
+      if(res){
+        setNotifyTitle('');
+        setNotifyText('');
         console.log('Notified')
       }
     }catch(error){
@@ -114,15 +116,23 @@ export default function SingleUpload() {
           <Link href={ '/fetch-source-api' }>
             <Button text={ 'Fetch World API'} />
           </Link>
-          <div>
-            <input className={classes.input} type='text' placeholder='Title of Notification'  
-              value={notifyTitle} onChange={(e) => setNotifyTitle(e.target.value)}
-            />
-            <input className={classes.input} type='text' placeholder='Enter text to Notify'  
-              value={notifyText} onChange={(e) => setNotifyText(e.target.value)}
-            />
-            <Button text={ 'Notify'} onClick={sendPushNotificationHandler} />
-          </div>
+
+          {triggerNotify ?
+            <div className={classes.notify+' '+classes.notify_container}>
+              <Button text={ 'notifyclose'}  onClick={() => setTriggerNotify(false)} />
+              <input className={classes.input} type='text' placeholder='Title of Notification'  
+                value={notifyTitle} onChange={(e) => setNotifyTitle(e.target.value)}
+              />
+              <input className={classes.input} type='text' placeholder='Enter text to Notify'  
+                value={notifyText} onChange={(e) => setNotifyText(e.target.value)}
+              />
+              <Button text={ 'Send Notification'} onClick={sendPushNotificationHandler} />
+            </div>
+            :
+            <div className={classes.notify}>
+              <Button text={ `notifyopen`}  onClick={() => setTriggerNotify(true)} />           
+            </div> 
+          }
         </div>
 
         <form action={handleSubmit} className={classes.form}>
