@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic';
 async function fetchTrendingData() {
 
   try{
-    const count = 20;
+    const count = 50;
     const category = 'top_stories'
     const url = `https://m.inshorts.com/api/en/news?category=${category}&max_limit=${count}&include_card_data=true&randomParam=${new Date().getTime()}`;
     

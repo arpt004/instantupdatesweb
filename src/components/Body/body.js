@@ -8,11 +8,12 @@ import NewsList from './newsList/newsList';
 import Notes from './notes/notes';
 import Loader from '../common/Loader/loader';
 import Message from '../common/Message/message';
-
+import Header from '../header/header';
 
 export default function Body() {
 
     const [news, setNews] = useState([]);
+    const [allNews, setAllNews] = useState([]);
     const [newsCategory, setNewsCategory] = useState([]);
     const [loader, setLoader] = useState(false);
     const [message, setMessage] = useState(false);
@@ -22,7 +23,8 @@ export default function Body() {
     const paraCategory = searchParams.get('category');
 
     function formatCategoryData(news, category) {
-        setNewsCategory(category)
+        setNewsCategory(category);
+        setAllNews(news)
         const categoryArray = ['business', 'politics', 'sports', 'technology', 'world', 'market']
         if(category && categoryArray.includes(category)) {
             const filterData = news.filter((eachNews) => eachNews.category.toLowerCase() === category);
@@ -84,12 +86,16 @@ export default function Body() {
     }
 
     return(
-        <div className={classes.container}> 
-            <Notes />
-            <NewsList newsData={news} setNews={setNews} setMessage={setMessage} setMessageData={setMessageData} />
+        <>
+            <Header setNews={setNews} allNews={allNews} />
 
-            { message && <Message type={messageData.type} message={messageData.message} onClose={() => setMessage(false)}/>}
+            <div className={classes.container}> 
+                <Notes />
+                <NewsList newsData={news} setNews={setNews} setMessage={setMessage} setMessageData={setMessageData} />
 
-        </div>
+                { message && <Message type={messageData.type} message={messageData.message} onClose={() => setMessage(false)}/>}
+
+            </div>
+        </>
     )
 }
