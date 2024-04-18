@@ -2,6 +2,14 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0px 8px 10px 0px;
     padding-bottom: 1rem;
 }
+.notify{
+    margin-top: 1rem;
+}
+.notify_container{
+    background-color: var(--ast-global-color-8);
+    padding: 2rem;
+    border-radius: 8px;
+}
 .input{
     padding: 1rem;
     margin-top: 1rem;

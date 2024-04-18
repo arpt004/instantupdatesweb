@@ -2,7 +2,7 @@ import { sql } from '@vercel/postgres';
 import { NextResponse } from 'next/server';
 
 
-async function sendPushNotification(registered_ids, text) {
+async function sendPushNotification(registered_ids, title, text ) {
   
   // try{
     // const res = await fetch('https://exp.host/--/api/v2/push/send', {
@@ -17,18 +17,14 @@ async function sendPushNotification(registered_ids, text) {
     //   })
     // })
 
-  // const registered_ids = [
-  //   "e-rP6gfoShuH-dEu4fXD0R:APA91bHPW5EUA9yHh7rgYkci3OFS4oxgbSTIMUR6jRYfaOBOWWoKxB6BOhpyvuiJW5awsjxTKvo91a4NrgUXu0HbtDczb9uiMTQdzxQFXE-hIpPeZDIVflsSLMhKEwWIxxsXYmbFS0Zt",
-  //   "cWfZCsdDSbuRIzGaKwFIqj:APA91bHPAyyq_yC3BCi2sbynOjEoyngA6MhQzSIgFu7hIZGvtNYkqM3xsrTsLEQ7YpADBnZaSkKv14XzYxwJy3rmI18Z3WJjgqpRqDLb8rUajNnEQKVp4z1jP_Auy4FfHowTrW64Co6n",
-  // ]
-
   const fcm_server_key = process.env.SERVER_KEY;
-  const notifyText = text ? text : "Get updated with instant updates updated"
+  const notifyTitle = title ? title : "Instant Updates!!";
+  const notifyText = text ? text : "Get updated with Instant Updates";
 
   const data = JSON.stringify({
     "registration_ids": registered_ids,
     "notification": {
-      "title": "Instant Updates!!",
+      "title": notifyTitle,
       "body": notifyText
     }
   });
@@ -60,7 +56,9 @@ export async function POST(request) {
   
   try{
     const body = await request.json()   
-    const text = body.text
+    const title = body.title;
+    const text = body.text;
+
     // ********************* // Fetch query
     const data = await sql`
       SELECT
@@ -70,7 +68,7 @@ export async function POST(request) {
 
     let pushkeys = []
     if(data && data.rows.length>0) pushkeys = data.rows.map((eachRow) => eachRow.pushkey);
-    const response = await sendPushNotification(pushkeys, text)
+    const response = await sendPushNotification(pushkeys, title, text)
 
     if(response) return NextResponse.json({ "Success": "pushed all notifications" })
     else return NextResponse.json({ "msg": "error in push notification" });
