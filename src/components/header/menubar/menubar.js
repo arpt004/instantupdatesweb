@@ -28,10 +28,8 @@ export default function Menubar({ setNews, allNews }) {
     }
 
     function handleSearch(e) {
-        console.log(e.target.value);
         setNews( () => {
-            const filterData = allNews.filter((eachNews) => eachNews.title.toLowerCase().includes(e.target.value));
-            console.log(filterData)
+            const filterData = allNews.filter((eachNews) => eachNews.title.toLowerCase().includes(e.target.value.toLowerCase()));
             return filterData;
         })
     }
