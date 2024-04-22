@@ -30,23 +30,24 @@
     width: 100%;
 }
 .news{
-    height: 45vh;
+    /* height: 42vh; */
     margin-left: 1rem;
     text-align: left;
     padding: 1rem;
-    overflow: hidden;
+    /* overflow: auto; */
 }
 .para{
     overflow: auto;
-    height: 30vh;
-    line-height: 20px;
+    /* height: 30vh; */
+    line-height: 25px;
 }
 .author{
     font-weight: 500;
 }
 
+/* 
 @media screen and (max-width: 900px) {
     .news {
       height: 55vh;
     }
-}
+}  */
