@@ -25,6 +25,7 @@ export default function Categories() {
                     )
                   })
                 }
+                <li> <Link href='/jains-kart' className={classes.link}> Jain Shop </Link> </li>
             </ul>
         </div>
     )

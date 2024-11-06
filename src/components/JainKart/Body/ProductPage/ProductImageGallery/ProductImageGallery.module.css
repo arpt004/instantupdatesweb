@@ -1,0 +1,49 @@
+.image{
+    cursor: pointer;
+    width: 100%;
+    max-height: '50vh';
+}
+.image img{
+    max-height: 50vh;
+}
+.controls{
+    width: '100%';
+    padding: 0 3rem;
+    text-align: center;
+    justify-content: center;
+}
+.navigationControl{
+    overflow-x: auto;
+    text-align: center;
+    justify-content: center;
+    z-index: 2;
+}
+.previousNextButton{
+    border: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 2rem;
+    color: #00000097;
+    padding: 0.4rem;
+    border-radius: 0.2rem;
+}
+.previousNextButton:hover{
+    cursor: pointer;
+    background-color: lightgray;
+    color: #000;
+}
+.navigationControlImageDiv{
+    margin: 0 0.4rem;
+    cursor: pointer;
+}
+.navigationControlImage{
+    width: 3rem;
+    height: 3rem;
+}
+
+@media screen and (max-width: 767px) {
+    .controls {
+      padding: 0;
+    }
+}

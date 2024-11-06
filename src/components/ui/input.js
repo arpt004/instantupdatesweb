@@ -1,6 +1,6 @@
 import classes from './ui.module.css'
 
-export default function Input({label, placeholder, type, formData, setFromData}) {
+export default function Input({label, placeholder, type, formData, setFromData, isRequired }) {
 
   function handleChange(e) {
     setFromData(pd => {
@@ -9,12 +9,17 @@ export default function Input({label, placeholder, type, formData, setFromData})
     })
   }
 
+  let star = isRequired
+  if(isRequired === undefined){
+    star = true
+  }
+
   return (
     <div className={classes.input_container}>
       <label className={classes.label}> {label.replaceAll('_',' ').toUpperCase()} 
-        {true && <p className={classes.star}>*</p> }
+        {star && <p className={classes.star}>*</p> }
       </label>
-      {true ?
+      {star ?
         <input className={classes.input} type={type} placeholder={placeholder} required
           onChange={handleChange} value={formData.label} name={label}
         />

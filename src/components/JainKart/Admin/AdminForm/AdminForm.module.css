@@ -1,0 +1,65 @@
+.formContainer{
+    padding: 1rem;
+}
+.form{
+    display: flex;
+    gap: 2px;
+}
+.leftForm{
+    width: 50%;
+    padding: 0.5rem 1rem;
+    border-right: 1px solid #0000008f;
+    text-align: left;
+}
+.rightForm{
+    width: 50%;
+    padding: 0.5rem 1rem;
+    text-align: right;
+}
+.variantsContainer{
+    width: 100%;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+.variantsContainerSkeleton{
+    width: 100%;
+    height: 10rem;
+}
+.label{
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0.2rem;
+    display: flex;
+}
+.input{
+    padding: 1rem;
+    border-radius: 8px;
+    border: 2px solid var(--ast-global-color-8);
+    width: 100%;
+}
+.input:hover{
+    border: 2px solid var(--ast-global-color-3);
+}
+.renderVariants{
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+}
+.removeButton{
+    background: transparent;
+    border: none;
+}
+
+/*  Media Query */
+@media screen and (max-width: 767px) {
+    .form{
+        display: block;
+    }
+    .leftForm{
+        width: 100%;
+        border-right: none;
+        text-align: left;
+    }
+    .rightForm{
+        width: 100%;
+    }
+}

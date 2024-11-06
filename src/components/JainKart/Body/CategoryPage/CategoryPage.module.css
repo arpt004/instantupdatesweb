@@ -1,0 +1,25 @@
+.mainCategoryContainer{
+    display: flex;
+}
+.categoryHeader{
+    padding-left: 0.7rem;
+}
+.categorySection{
+    text-align: left;
+    width: 80%;
+    padding: 1rem;
+}
+.categoryContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Media Query */
+@media screen and (max-width: 850px) {
+    .mainCategoryContainer{
+        display: block;
+    }
+    .categorySection{
+        width: 100%;
+    }
+}

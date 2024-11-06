@@ -1,0 +1,54 @@
+.leftSideBarContainer{
+    width: 20%;
+    min-height: 90vh;
+    border-right: 1px solid #0000008f;
+    padding: 1rem 2rem;
+    text-align: left;
+}
+.categoriesTitle{
+    text-decoration: none;
+    color: black;
+}
+.horizontalLine{
+    border-bottom: 1px solid #0000008f;
+}
+.categoriesLink{
+    display: block;
+    text-decoration: none;
+    color: #0000008f;
+    margin-top: 1rem;
+}
+.categoriesLink:hover{
+    color: #000000;
+}
+.filterSection{
+    color: #000000;
+    margin-top: 2.5rem;
+}
+.filterButton{
+    width: 100% !important;
+    justify-content: left !important;
+    display: block;
+}
+.filterTitle{
+    display: flex;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+.filterText{
+    width: 80%;
+    text-align: left;
+}
+.filterIcon{
+    width: 20%;
+    text-align: right;
+}
+
+/*  Media Query */
+@media screen and (max-width: 850px) {
+    .leftSideBarContainer{
+        width: 100%;
+        min-height: unset;
+    }
+}
