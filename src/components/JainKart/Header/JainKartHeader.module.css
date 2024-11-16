@@ -70,7 +70,7 @@
 
 /* Modal */
 .modalContainer{
-    overflow: 'auto' !important;
+    overflow: auto !important;
     max-width: 75% !important;
     max-height: 95% !important;
     padding: 2rem !important;
@@ -98,7 +98,7 @@
 }
 
   /* Media query */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 733px) {
     .modalContainer{
         min-width: 100%;
         margin: auto;

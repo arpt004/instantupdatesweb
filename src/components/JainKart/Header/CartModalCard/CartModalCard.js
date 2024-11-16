@@ -103,9 +103,9 @@ const CartModalCard = ({setCartModal, isMobile}) => {
                 </div>
                )
              })}
-
+                
+                <hr/ > 
                 <p className={classes.mobileTotalAmount} > 
-                    <hr/ > 
                     Total: ₹ 
                     <span> {totalSum.toFixed(2)} </span> 
                 </p>

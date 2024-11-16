@@ -23,7 +23,7 @@ const JainKartHeader = () => {
 
   const handleResize = () => {
     // console.log("window.innerWidth:", window.innerWidth);
-    setIsMobile(window.innerWidth < 700);
+    setIsMobile(window.innerWidth < 733);
   };
 
   useEffect(() => {
@@ -105,6 +105,17 @@ const JainKartHeader = () => {
               className={classes.hamburger}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
+              <Button onClick={handleCartClick} disabled={cartReduxCount<1? true:false}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                  <g fill="none" strokeLinecap="round" strokeLinejoin="round">
+                    <path stroke="#344054" strokeWidth={3} d="M35.417 42.708h.208m-12.708 0h.208z"></path>
+                    <path stroke="#306cfe" strokeWidth={2} d="M6.25 6.25h4.833a2.08 2.08 0 0 1 1.938 1.313l7.812 19.52l-2.666 5.313a2.084 2.084 0 0 0 1.875 3.02h19.541"></path>
+                    <path stroke="#306cfe" strokeWidth={2} d="M15 12.5h28.75l-5.833 14.583H20.833"></path>
+                  </g>
+                </svg>
+                {cartReduxCount>=1 && <span> { cartReduxCount } </span> }
+              </Button>
+
               ☰
             </div>
           )}
@@ -117,17 +128,6 @@ const JainKartHeader = () => {
             <li> <Link href={`/jains-kart`} className={classes.navLink} > Home </Link> </li>
             <li> <Link href={`/jains-kart/about`} className={classes.navLink} > About </Link> </li>
             <li> <Link href={`/jains-kart/contact`} className={classes.navLink} > Contact </Link> </li>
-            <Button onClick={handleCartClick} disabled={cartReduxCount<1? true:false}>
-              <span> Cart </span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
-                <g fill="none" strokeLinecap="round" strokeLinejoin="round">
-                  <path stroke="#344054" strokeWidth={3} d="M35.417 42.708h.208m-12.708 0h.208z"></path>
-                  <path stroke="#306cfe" strokeWidth={2} d="M6.25 6.25h4.833a2.08 2.08 0 0 1 1.938 1.313l7.812 19.52l-2.666 5.313a2.084 2.084 0 0 0 1.875 3.02h19.541"></path>
-                  <path stroke="#306cfe" strokeWidth={2} d="M15 12.5h28.75l-5.833 14.583H20.833"></path>
-                </g>
-              </svg>
-              {cartReduxCount>=1 && <span> { cartReduxCount } </span> }
-            </Button>
             { authToken && <li> <Link href={`/jains-kart/admin`} className={classes.navLink} > Admin </Link> </li> }
             <li> 
               { authToken ?
