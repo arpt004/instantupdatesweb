@@ -7,7 +7,7 @@
 }
 
 /* Media query */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 733px) {
     .footer{
         padding: 0.2rem;
     }

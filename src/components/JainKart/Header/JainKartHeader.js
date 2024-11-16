@@ -22,8 +22,8 @@ const JainKartHeader = () => {
   const [cartModal, setCartModal] = useState(false);
 
   const handleResize = () => {
-    // console.log("window.innerWidth:", window.innerWidth);
-    setIsMobile(window.innerWidth < 700);
+    console.log("window.innerWidth:", window.innerWidth);
+    setIsMobile(window.innerWidth < 733);
   };
 
   useEffect(() => {
