@@ -1,11 +1,13 @@
-
 import { combineReducers } from "redux";
 import { userData } from "./userData";
-import { selectedProject } from "./selectedProject";
+import { cartCount, cartData } from "./cartController";
+import { adminJainsKart } from "./adminJainsKart";
 
 const reducers = combineReducers({
   userData: userData,
-  selectedProject: selectedProject,
+  adminJainsKart: adminJainsKart,
+  cartCount: cartCount,
+  cartData: cartData,
 });
 
 export default reducers;

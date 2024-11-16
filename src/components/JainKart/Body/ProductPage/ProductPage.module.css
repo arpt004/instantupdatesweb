@@ -1,0 +1,203 @@
+.cardContainer{
+    margin-top: 1.25rem;
+    margin-bottom: 3.75rem;
+}
+.card{
+    margin: 2rem;
+    min-height: 19rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    box-shadow: 0 6px 23px 0 rgba(0,0,0, 0.16);
+    align-items: center;
+    background: #ffffff;
+    padding-bottom: 0rem;
+    border-radius: 0.4rem;
+}
+.cardContent{
+    display: flex;
+    flex-direction: row;
+    padding: 1.5rem;
+    width: 100%;
+}
+.image{
+    cursor: pointer;
+    width: 100%;
+    max-height: 50vh;
+}
+.deviceSKU{
+    margin: 0.3rem 0;
+}
+.manufacturerName{
+    margin: 0;
+    color: #00000066;
+}
+.description{
+    gap: 1rem;
+    text-align: left;
+    justify-content: start;
+    font-size: 0.9rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.price{
+    margin: 0.5rem 0 0;
+}
+.mrp{
+    margin: 0;
+    font-size: 0.8rem;
+    text-decoration: line-through;
+}
+.outOfStock{
+    margin: 0.5rem 0 0;
+    color: #ff000082;
+}
+.buyNowButton{
+    background-color: rgb(82, 82, 243);
+    color: #ffffff;
+    padding: 0.5rem 2rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 0.4rem;
+    margin-right: 1rem;
+}
+.buyNowButton:focus{
+    outline: 1px solid #ffffff;
+    outline-offset: 2px;
+}
+.buyNowButton:disabled{
+    background-color: #cccccc;
+    opacity: 0.6;
+}
+.leasingOptions{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+.dropdown{
+    min-width: 60%;
+    padding: 0.8rem 1rem;
+    border-radius: 0.4rem;
+    -webkit-appearance: none;
+    appearance: none;
+}
+.imageContainer{
+    width: 50%;
+}
+.productDetails{
+    width: 50%;
+    margin-left: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+
+.popupContainer{
+    padding-left: 1.5rem;
+}
+.modalContainer{
+    margin: auto !important;
+    overflow: hidden !important;
+    max-width: 80% !important;
+    padding: 0 !important;
+    background: #424242 !important;
+}
+.modalContainerBackdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0, 0.8);
+    z-index: 1000;
+}
+.modalImageContainer{
+    display: block !important;
+}
+.modalImage{
+    height: 90vh;
+    padding: 3rem;
+    background: #f0f0f0d4;
+    border-radius: 0.5rem;
+}
+.modalButton{
+    position: fixed;
+    right: 0;
+    top: 0.8rem;
+    background: transparent;
+    color: #ffffff !important;
+    border: none;
+    padding: 0.5rem 0;
+    z-index: 3;
+}
+.modalButton:hover, .modalButton:hover:active{
+    background: transparent;
+    color: #000;
+}
+.financingOption{
+    width: 100%;
+    text-align: left;
+    padding: 0.8rem 2rem;
+    border-bottom-right-radius: 0.4rem;
+    border-bottom-left-radius: 0.4rem;
+    background: rgb(200, 200, 232);;
+}
+.financingOptionLink{
+    margin-left: 1rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    color: #0067b8;
+    font-size: 0.9rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.financingOptionLink:hover span{
+    margin-right: 0.3rem;
+}
+.financingOptionLink span{
+    font-weight: 600;
+    margin-right: 0.1rem;
+    transition: margin-right 0.2s ease;
+}
+.financingOptionIcon{
+    margin-top: 0.4rem;
+}
+.extraPadding{
+    margin: 0.3rem 0;
+}
+
+
+
+
+/* Media Query */
+@media screen and (max-width: 850px) {
+    .cardContent {
+      display: block;
+    }
+    .imageContainer{
+        width: 100%;
+    }
+    .productDetails{
+        width: 100%;
+        margin-left: 0;
+    }
+}
+@media screen and (max-width: 767px) {
+    .card {
+      margin: 0 0.4rem;
+      padding: 0.4rem;
+    }
+    .modalContainer{
+        min-width: 100%;
+    }
+    .modalButton{
+        right: -1.5rem;
+    }
+    .leasingOptions{
+        text-align: left;
+    }
+}

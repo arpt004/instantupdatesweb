@@ -1,0 +1,106 @@
+.carouselContainer{
+    background: #424242;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.carouselContent{
+    display: flex;
+    height: 100%;
+}
+.carouselItem{
+    display: flex;
+    flex-direction: row;
+    min-width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 3rem;
+}
+.imageContainer{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 0;
+}
+.imageModal{
+    max-width: 100%;
+    height: 65vh;
+}
+.controlsContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0.625rem;
+    padding-bottom: 1rem;
+    z-index: 3;
+}
+.carouselButton{
+    position: absolute;
+    top: 10%;
+    height: 65vh;
+    text-align: center;
+    width: 10%;
+    max-width: 5rem !important;
+    border: none;
+    z-index: 3;
+    background: #424242 !important;
+    color: #ffffff !important;
+    padding: 0.5rem;    
+}
+.carouselButton:hover, .carouselButton:hover:active{
+    background: #878484ab !important;
+}
+.leftCarouselButton{
+    left: 0;
+}
+.rightCarouselButton{
+    right: 0;
+}
+.carouselButton span, .carouselButton svg{
+    font-size: 2rem;
+    width: 2rem;
+}
+.navCarousel{
+    background-color: aqua;
+}
+.navButton{
+    border: none;
+    color: #ffffff;
+    background: transparent;
+}
+.navButton:hover, .navButton:hover:not(:disabled){
+    border: none;
+    background: transparent;
+}
+.navButton svg{
+    height: 0.75rem;
+    width: 0.75rem;
+}
+
+
+@media screen and (max-width: 767px) {
+    .carouselContainer{
+      padding-top: 0;
+      height: auto;
+    }
+    .carouselItem{
+        flex-direction: column;
+        padding: 0;
+    }
+    .imageContainer{
+        order: 1;
+    }
+    .imageModal{
+        padding-top: 10%;
+        height: 30vh;
+        width: 85%;
+    }
+    .carouselButton{
+        height: 23vh;
+        top: 15%;
+    }
+}

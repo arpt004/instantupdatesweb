@@ -9,13 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fluentui/react": "^8.121.6",
+    "@fluentui/react-carousel-preview": "^0.6.0",
+    "@fluentui/react-components": "^9.55.1",
+    "@fluentui/react-icons": "^2.0.261",
     "@vercel/blob": "^0.22.1",
     "@vercel/postgres": "^0.7.2",
     "next": "14.1.4",
     "pg": "^8.11.3",
     "react": "^18",
     "react-dom": "^18",
+    "react-redux": "^9.1.2",
     "react-responsive-carousel": "^3.2.23",
+    "redux": "^5.0.1",
     "swr": "^2.2.5",
     "xlsx": "^0.18.5"
   }

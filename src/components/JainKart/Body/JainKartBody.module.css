@@ -1,0 +1,36 @@
+.mainBodyContainer{
+    display: flex;
+}
+.categorySection{
+    text-align: left;
+    width: 80%;
+    padding: 1rem;
+}
+.categoryHeader{
+    display: flex;
+}
+.categoryTitle{
+    width: 70%;
+    padding-left: 0.7rem;
+    text-align: left;
+}
+.categoryLink{
+    padding-top: 2rem;
+    padding-right: 3%;
+    width: 30%;
+    text-align: right;
+}
+.categoryContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Media Query */
+@media screen and (max-width: 850px) {
+    .mainBodyContainer{
+        display: block;
+    }
+    .categorySection{
+        width: 100%;
+    }
+}
