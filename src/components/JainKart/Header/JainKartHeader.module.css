@@ -32,6 +32,7 @@
     top: 3.2rem;
     left: 0;
     background: transparent;
+    z-index: 3;
 }
 .nav_closed{
     width: 80%;
@@ -43,7 +44,6 @@
     left: 0;
     background: #fff;
     padding-top: 1rem;
-    z-index: 3;
 }
 .nav_closed li{
     display: block;
@@ -66,4 +66,44 @@
 }
 .loginButton:hover{
     color: #204748 !important;
+}
+
+/* Modal */
+.modalContainer{
+    overflow: 'auto' !important;
+    max-width: 75% !important;
+    max-height: 95% !important;
+    padding: 2rem !important;
+    background: #fff !important;
+    border-radius: 0.5rem !important;
+}
+.modalInnerContainer{
+    display: block !important;
+}
+.modalButton{
+    position: fixed;
+    right: 0rem;
+    top: 0.8rem;
+    background: #fff;
+    border: none;
+    padding: 0.5rem 0;
+    z-index: 3;
+}
+.modalButton svg{
+    color: #0000007b;
+}
+.modalButton:hover, .modalButton:hover:active{
+    background: #fff;
+    color: #000;
+}
+
+  /* Media query */
+@media screen and (max-width: 700px) {
+    .modalContainer{
+        min-width: 100%;
+        margin: auto;
+    }
+    .modalButton{
+        right: -1.5rem;
+    }
 }

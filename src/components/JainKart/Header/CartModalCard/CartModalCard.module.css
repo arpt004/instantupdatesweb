@@ -1,0 +1,74 @@
+.cartContainer{
+    text-align: left;
+    justify-content: start;
+    width: 100%;
+}
+.tableContainer{
+    width: 100%;
+}
+.modalTitle{
+    margin-top: 0;
+}
+.tableHeader{
+    font-size: 1rem;
+    font-weight: 600 !important;
+}
+.tableImage{
+    width: 4rem;
+}
+.tableMobileImage{
+    width: 90%;
+}
+.modalDeleteButton{
+    border: none;
+}
+.borderBottomNone{
+    border-bottom: none;
+}
+.checkoutButtonContainer{
+    width: 100%;
+    text-align: right;
+    justify-content: end;
+}
+.checkoutButton{
+    background-color: rgb(68, 68, 211) !important;
+    color: #fff !important;
+    padding: 0.5rem 2rem !important;
+    line-height: 1.5 !important;
+    font-size: 1rem !important;
+    border: none !important;
+    border-radius: 0.4rem !important;
+}
+.checkoutButton:focus{
+    outline: 0.62rem solid #fff !important;
+    outline-offset: 0.13rem !important;
+}
+.checkoutButton:disabled{
+    background-color: #cccccc !important;
+    opacity: 0.6 !important;
+}
+.modalQuantity{
+    width: 60% !important;
+    border-radius: 0.4rem !important;
+}
+.modalQuantity div{
+    border-radius: 0.4rem !important;
+}
+.mobileTotalAmount{
+    margin-bottom: -1rem;
+}
+.mobileTotalAmount span{
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+
+/* Media query */
+@media screen and (max-width: 700px) {
+    .tableRow{
+        font-size: 0.6rem;
+    }
+    .checkoutButtonContainer{
+        padding-bottom: 1.5rem;
+    }
+}

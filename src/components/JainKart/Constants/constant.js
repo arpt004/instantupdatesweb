@@ -6,3 +6,12 @@ export const CATEGORIES = [
     'Decoration',
     'Other'
 ] 
+
+export const columns = [
+    { columnKey: 'itemImage', label: 'Item' },
+    { columnKey: 'itemDeviceSKU', label: 'Name' },
+    { columnKey: 'itemPrice', label: 'Item Price' },
+    { columnKey: 'itemQuantity', label: 'Quantity' },
+    { columnKey: 'itemTotalPrice', label: 'Price' },
+    { columnKey: 'action', label: 'Action' },
+]

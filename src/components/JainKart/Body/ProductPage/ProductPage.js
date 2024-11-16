@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useDispatch, useSelector } from "react-redux";
 import {
   Button,
   Dialog,
@@ -15,6 +16,7 @@ import classes from "./ProductPage.module.css";
 import Link from "next/link";
 import ProductImageGallery from "./ProductImageGallery/ProductImageGallery";
 import ModalImageGallery from "./ModalImageGallery/ModalImageGallery";
+import { cartCount, cartData } from "@/redux/actions/cartController";
 
 const filterByProductId = (filterId) => {
   const filteredData = ProductDetails.filter(
@@ -25,6 +27,9 @@ const filterByProductId = (filterId) => {
 
 const ProductPage = ({ product_id }) => {
   const router = useRouter();
+  const dispatch = useDispatch();
+  const cartReduxCount = useSelector((state) => state.cartCount);
+  const cartReduxData = useSelector((state) => state.cartData);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
   const ProductData = filterByProductId(product_id);
@@ -41,6 +46,40 @@ const ProductPage = ({ product_id }) => {
     setIsModalOpen(false);
   };
 
+  const handleBuyNow = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleAddToCart = (AddProductData) => {
+    setIsModalOpen(false);
+
+    const dataObject = {
+      DeviceSKU: AddProductData.DeviceSKU,
+      ManufacturerName: AddProductData.ManufacturerName,
+      Price: AddProductData.Price,
+      Images: AddProductData.Images,
+      DeviceCatalogId: AddProductData.DeviceCatalogId,
+      quantity: 1,
+    }
+
+    const checkForId = cartReduxData.find(item => item.DeviceCatalogId === AddProductData.DeviceCatalogId)
+    let dataArray = []
+    if(checkForId){
+      cartReduxData.forEach(element => {
+        if(element.DeviceCatalogId === AddProductData.DeviceCatalogId){
+          dataObject.quantity = Number(element.quantity) + 1
+          dataArray.push(dataObject)
+        } else {
+          dataArray.push(element)
+        }
+      });
+    } else {
+      dataArray = [...cartReduxData, dataObject]
+    }
+    dispatch(cartCount(cartReduxCount+1))
+    dispatch(cartData(dataArray))
+  };
+
   const selectedVariant =
     ProductData.Variants?.find(
       (variant) => variant.DeviceCatalogId === product_id
@@ -51,7 +90,7 @@ const ProductPage = ({ product_id }) => {
       <div className={classes.card}>
         <div className={classes.cardContent}>
           <div className={classes.imageContainer}>
-            {ProductData.Images?.length <= 1 ? ( //update to one
+            {ProductData.Images?.length <= 1 ? ( 
               <Image
                 src={ProductData.Images[0].blobURI}
                 alt={ProductData.Images[0].altText}
@@ -116,14 +155,25 @@ const ProductPage = ({ product_id }) => {
               </select>
             )}
 
-            <button
-              className={classes.buyNowButton}
-              title="Buy Now"
-              onClick={handleCloseModal}
-              disabled={!ProductData.Price || ProductData.InventoryStatus <= 0}
-            >
-              Buy Now
-            </button>
+            <div>
+              <button
+                className={classes.buyNowButton}
+                title="Buy Now"
+                onClick={handleBuyNow}
+                disabled={!ProductData.Price || ProductData.InventoryStatus <= 0}
+              >
+                Buy Now
+              </button>
+
+              <button
+                className={classes.buyNowButton}
+                title="Add to Cart"
+                onClick={() => handleAddToCart(ProductData)}
+                disabled={!ProductData.Price || ProductData.InventoryStatus <= 0}
+              >
+                Add to Cart
+              </button>
+            </div>
           </div>
         </div>
 

@@ -61,6 +61,7 @@
     margin-top: 1rem;
     border: none;
     border-radius: 0.4rem;
+    margin-right: 1rem;
 }
 .buyNowButton:focus{
     outline: 1px solid #ffffff;
@@ -103,6 +104,7 @@
     overflow: hidden !important;
     max-width: 80% !important;
     padding: 0 !important;
+    background: #424242 !important;
 }
 .modalContainerBackdrop{
     position: fixed;
@@ -127,7 +129,7 @@
     right: 0;
     top: 0.8rem;
     background: transparent;
-    color: #424242;
+    color: #ffffff !important;
     border: none;
     padding: 0.5rem 0;
     z-index: 3;
@@ -188,5 +190,14 @@
     .card {
       margin: 0 0.4rem;
       padding: 0.4rem;
+    }
+    .modalContainer{
+        min-width: 100%;
+    }
+    .modalButton{
+        right: -1.5rem;
+    }
+    .leasingOptions{
+        text-align: left;
     }
 }

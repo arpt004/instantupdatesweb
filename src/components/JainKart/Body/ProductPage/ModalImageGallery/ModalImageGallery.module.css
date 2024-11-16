@@ -1,5 +1,5 @@
 .carouselContainer{
-    background: #d3d3d380;
+    background: #424242;
     margin: auto;
     position: relative;
     overflow: hidden;
@@ -43,13 +43,16 @@
     top: 10%;
     height: 65vh;
     text-align: center;
-    width: 10rem;
+    width: 10%;
     max-width: 5rem !important;
     border: none;
     z-index: 3;
-    background: #878484ab !important;
-    color: #000;
+    background: #424242 !important;
+    color: #ffffff !important;
     padding: 0.5rem;    
+}
+.carouselButton:hover, .carouselButton:hover:active{
+    background: #878484ab !important;
 }
 .leftCarouselButton{
     left: 0;
@@ -66,7 +69,7 @@
 }
 .navButton{
     border: none;
-    color: #424242;
+    color: #ffffff;
     background: transparent;
 }
 .navButton:hover, .navButton:hover:not(:disabled){
@@ -90,5 +93,14 @@
     }
     .imageContainer{
         order: 1;
+    }
+    .imageModal{
+        padding-top: 10%;
+        height: 30vh;
+        width: 85%;
+    }
+    .carouselButton{
+        height: 23vh;
+        top: 15%;
     }
 }
