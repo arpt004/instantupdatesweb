@@ -8,7 +8,7 @@ export default function AdminSelect({label, categories, formData, handleChange }
         {true && <p className={classes.star}>*</p> }
       </label>
       <select className={classes.input} required 
-        onChange={handleChange} value={formData.label} name={label}
+        onChange={handleChange} value={formData[label]} name={label}
       >
         <option value=''> Select </option>
         { categories.map(category => {

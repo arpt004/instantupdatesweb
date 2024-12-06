@@ -26,6 +26,8 @@ const ProductImageGallery = ({ images, handleImageClick, setSelectedImage }) => 
     setCurrentIndex(index)
   }
 
+  if(!images || images.length<1) return <h3> Loading... </h3>
+
   return (
     <Stack className={classes.mainContainer}>
       <Image 

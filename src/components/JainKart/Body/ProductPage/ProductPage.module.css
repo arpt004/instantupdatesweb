@@ -16,6 +16,7 @@
     background: #ffffff;
     padding-bottom: 0rem;
     border-radius: 0.4rem;
+    position: relative;
 }
 .cardContent{
     display: flex;
@@ -168,6 +169,14 @@
 }
 .extraPadding{
     margin: 0.3rem 0;
+}
+.adminEditButton{
+    z-index: 3;
+    background: #fff;
+    border: none;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
 }
 
 

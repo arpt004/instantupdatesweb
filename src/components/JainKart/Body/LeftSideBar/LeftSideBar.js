@@ -33,7 +33,7 @@ const LeftSideBar = ({categories, filterSection}) => {
           <Button className={classes.filterButton} onClick={() => setFilterOpen(pv => !pv)} >
             <div className={classes.filterTitle} > 
               <div className={classes.filterText} > <span> Filters </span> </div>
-              <div className={classes.filterIcon} > { filterOpen ? <ChevronDown12Filled /> : <ChevronUp12Filled /> } </div>
+              <div className={classes.filterIcon} > { filterOpen ? <ChevronUp12Filled /> : <ChevronDown12Filled /> } </div>
             </div>
           </Button>
         </div>
@@ -43,10 +43,9 @@ const LeftSideBar = ({categories, filterSection}) => {
         <>
           <hr className={classes.horizontalLine}/>
           <ol className={''}>
-            <li> Arpit </li>
-            <li> Jain </li>
-            <li> product </li>
-            <li> run </li>
+            <li> Brand </li>
+            <li> Price </li>
+            <li> Category </li>
           </ol>
         </>
       }

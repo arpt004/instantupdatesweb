@@ -143,10 +143,12 @@ const JainKartHeader = () => {
       <Dialog open={cartModal} onOpenChange={handleCloseCart}>
         <DialogSurface className={classes.modalContainer}>
           <DialogBody className={classes.modalInnerContainer}>
-            <Button className={classes.modalButton} onClick={handleCloseCart}>
-              <Dismiss24Filled />
-            </Button>
-            <CartModalCard setCartModal={setCartModal} isMobile={isMobile}/>
+            <>
+              <Button className={classes.modalButton} onClick={handleCloseCart}>
+                <Dismiss24Filled />
+              </Button>
+              <CartModalCard setCartModal={setCartModal} isMobile={isMobile}/>
+            </>          
           </DialogBody>
         </DialogSurface>
       </Dialog>
@@ -155,3 +157,11 @@ const JainKartHeader = () => {
 };
 
 export default JainKartHeader;
+
+
+{/* <div>
+<Button className={classes.modalButton} onClick={handleCloseCart}>
+  <Dismiss24Filled />
+</Button>
+<CartModalCard setCartModal={setCartModal} isMobile={isMobile}/>
+</div> */}

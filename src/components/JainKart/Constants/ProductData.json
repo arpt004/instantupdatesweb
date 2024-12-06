@@ -1,7 +1,7 @@
 {
     "ProductDetails": [
         {
-            "Images": [
+            "images": [
                 {
                   "altText": "10.1 Inch room scheduling touch screen white",
                   "blobURI": "https://devicescatalogimages.teams.cdn.office.net/deviceimagesprod/811/10.1Inchroomschedulingtouchscreenwhite-en-us-20210301T220402-1.png",
@@ -17,54 +17,54 @@
                   "Dimensions": "1280x720"
                 }
             ],
-            "Title": "Crestron - Room scheduling touch screen - White / 10 inch",
-            "MRP": "3999",
-            "DeviceSKU": "10.1 Inch room scheduling touch screen white",
-            "ShortDescription": "A touch screen wall mount designed specifically to run Microsoft Teams, with quick installation and web-based configuration. ",
-            "Description": "A stylish and versatile wall mount touch screen designed specifically to run the Microsoft Teams Panels scheduling application. It installs quickly and easily, with simple web-based configuration and cloud-based management and requires no control system or programming. ",
-            "DeviceCatalogId": 811,
-            "DeviceType": 1,
-            "Category": "Gifts",
-            "InventoryStatus": 1,
-            "ManufacturerName": "Crestron",
-            "MarketPlaceListingState": "3",
-            "Price": "₹1022.00",
-            "ResellerId": 1,
+            "title": "Crestron - Room scheduling touch screen - White / 10 inch",
+            "mrp": "3999",
+            "devicesku": "10.1 Inch room scheduling touch screen white",
+            "shortdescription": "A touch screen wall mount designed specifically to run Microsoft Teams, with quick installation and web-based configuration. ",
+            "description": "A stylish and versatile wall mount touch screen designed specifically to run the Microsoft Teams Panels scheduling application. It installs quickly and easily, with simple web-based configuration and cloud-based management and requires no control system or programming. ",
+            "devicecatalogid": 811,
+            "devicetype": 1,
+            "category": "Gifts",
+            "inventorystatus": 1,
+            "manufacturername": "Crestron",
+            "marketplacelistingstate": "3",
+            "price": "₹1022.00",
+            "resellerid": 1,
             "Specifications":[],
-            "StartingLeaseFormattedPrice":"₹101.11",
-            "Variants": [
+            "startingleaseformattedprice":"₹101.11",
+            "variants": [
                 {
-                    "DeviceCatalogId": 811,
+                    "devicecatalogid": 811,
                     "Tag": "Room scheduling touch screen - White / 10 inch"
                 },
                 {
-                    "DeviceCatalogId": 813,
+                    "devicecatalogid": 813,
                     "Tag": "Room scheduling touch screen - Black / 10 inch"
                 },
                 {
-                    "DeviceCatalogId": 814,
+                    "devicecatalogid": 814,
                     "Tag": "Room scheduling touch screen - White / 7 inch"
                 },
                 {
-                    "DeviceCatalogId": 816,
+                    "devicecatalogid": 816,
                     "Tag": "Room scheduling touch screen - Black / 7 inch"
                 }
             ],
-            "Fullfillment": [
+            "fullfillment": [
                 {
                     "MarketPlaceResellerId": 1,
                     "ResellerName": "Unifiedcommunications.com",
                     "ResellerProductId": "9488",
                     "ResellerPrice": 1012,
                     "ResellerFormattedPrice": "₹1022.00",
-                    "InventoryStatus": 1,
+                    "inventorystatus": 1,
                     "StartingLeasePrice": 28.11,
-                    "StartingLeaseFormattedPrice": "₹101.11"
+                    "startingleaseformattedprice": "₹101.11"
                 }
             ]
         },
         {
-            "Images": [
+            "images": [
                 {
                   "altText": "10.1 Inch room scheduling touch screen white",
                   "blobURI": "https://devicescatalogimages.teams.cdn.office.net/deviceimagesprod/811/10.1Inchroomschedulingtouchscreenwhite-en-us-20210301T220402-1.png",
@@ -80,54 +80,54 @@
                   "Dimensions": "1280x720"
                 }
             ],
-            "Title": "Crestron - Room scheduling touch screen - White / 10 inch",
-            "MRP": "3999",
-            "DeviceSKU": "10.1 Inch room scheduling touch screen white",
-            "ShortDescription": "A touch screen wall mount designed specifically to run Microsoft Teams, with quick installation and web-based configuration. ",
-            "Description": "A stylish and versatile wall mount touch screen designed specifically to run the Microsoft Teams Panels scheduling application. It installs quickly and easily, with simple web-based configuration and cloud-based management and requires no control system or programming. ",
-            "DeviceCatalogId": 812,
-            "DeviceType": 1,
-            "Category": "Decoration",
-            "InventoryStatus": 1,
-            "ManufacturerName": "Crestron",
-            "MarketPlaceListingState": "3",
-            "Price": "₹1022.00",
-            "ResellerId": 1,
+            "title": "Crestron - Room scheduling touch screen - White / 10 inch",
+            "mrp": "3999",
+            "devicesku": "10.1 Inch room scheduling touch screen white",
+            "shortdescription": "A touch screen wall mount designed specifically to run Microsoft Teams, with quick installation and web-based configuration. ",
+            "description": "A stylish and versatile wall mount touch screen designed specifically to run the Microsoft Teams Panels scheduling application. It installs quickly and easily, with simple web-based configuration and cloud-based management and requires no control system or programming. ",
+            "devicecatalogid": 812,
+            "devicetype": 1,
+            "category": "Decoration",
+            "inventorystatus": 1,
+            "manufacturername": "Crestron",
+            "marketplacelistingstate": "3",
+            "price": "₹1022.00",
+            "resellerid": 1,
             "Specifications":[],
-            "StartingLeaseFormattedPrice":"₹101.11",
-            "Variants": [
+            "startingleaseformattedprice":"₹101.11",
+            "variants": [
                 {
-                    "DeviceCatalogId": 811,
+                    "devicecatalogid": 811,
                     "Tag": "Room scheduling touch screen - White / 10 inch"
                 },
                 {
-                    "DeviceCatalogId": 813,
+                    "devicecatalogid": 813,
                     "Tag": "Room scheduling touch screen - Black / 10 inch"
                 },
                 {
-                    "DeviceCatalogId": 814,
+                    "devicecatalogid": 814,
                     "Tag": "Room scheduling touch screen - White / 7 inch"
                 },
                 {
-                    "DeviceCatalogId": 816,
+                    "devicecatalogid": 816,
                     "Tag": "Room scheduling touch screen - Black / 7 inch"
                 }
             ],
-            "Fullfillment": [
+            "fullfillment": [
                 {
                     "MarketPlaceResellerId": 1,
                     "ResellerName": "Unifiedcommunications.com",
                     "ResellerProductId": "9488",
                     "ResellerPrice": 1012,
                     "ResellerFormattedPrice": "₹1022.00",
-                    "InventoryStatus": 1,
+                    "inventorystatus": 1,
                     "StartingLeasePrice": 28.11,
-                    "StartingLeaseFormattedPrice": "₹101.11"
+                    "startingleaseformattedprice": "₹101.11"
                 }
             ]
         },
         {
-            "Images": [
+            "images": [
                 {
                   "altText": "10.1 Inch room scheduling touch screen white",
                   "blobURI": "https://devicescatalogimages.teams.cdn.office.net/deviceimagesprod/811/10.1Inchroomschedulingtouchscreenwhite-en-us-20210301T220402-1.png",
@@ -143,54 +143,54 @@
                   "Dimensions": "1280x720"
                 }
             ],
-            "Title": "Crestron - Room scheduling touch screen - White / 10 inch",
-            "MRP": "3999",
-            "DeviceSKU": "10.1 Inch room scheduling touch screen white",
-            "ShortDescription": "A touch screen wall mount designed specifically to run Microsoft Teams, with quick installation and web-based configuration. ",
-            "Description": "A stylish and versatile wall mount touch screen designed specifically to run the Microsoft Teams Panels scheduling application. It installs quickly and easily, with simple web-based configuration and cloud-based management and requires no control system or programming. ",
-            "DeviceCatalogId": 813,
-            "DeviceType": 1,
-            "Category": "Wearables",
-            "InventoryStatus": 0,
-            "ManufacturerName": "Crestron",
-            "MarketPlaceListingState": "3",
-            "Price": "₹1022.00",
-            "ResellerId": 1,
+            "title": "Crestron - Room scheduling touch screen - White / 10 inch",
+            "mrp": "3999",
+            "devicesku": "10.1 Inch room scheduling touch screen white",
+            "shortdescription": "A touch screen wall mount designed specifically to run Microsoft Teams, with quick installation and web-based configuration. ",
+            "description": "A stylish and versatile wall mount touch screen designed specifically to run the Microsoft Teams Panels scheduling application. It installs quickly and easily, with simple web-based configuration and cloud-based management and requires no control system or programming. ",
+            "devicecatalogid": 813,
+            "devicetype": 1,
+            "category": "Wearables",
+            "inventorystatus": 0,
+            "manufacturername": "Crestron",
+            "marketplacelistingstate": "3",
+            "price": "₹1022.00",
+            "resellerid": 1,
             "Specifications":[],
-            "StartingLeaseFormattedPrice":"₹101.11",
-            "Variants": [
+            "startingleaseformattedprice":"₹101.11",
+            "variants": [
                 {
-                    "DeviceCatalogId": 811,
+                    "devicecatalogid": 811,
                     "Tag": "Room scheduling touch screen - White / 10 inch"
                 },
                 {
-                    "DeviceCatalogId": 813,
+                    "devicecatalogid": 813,
                     "Tag": "Room scheduling touch screen - Black / 10 inch"
                 },
                 {
-                    "DeviceCatalogId": 814,
+                    "devicecatalogid": 814,
                     "Tag": "Room scheduling touch screen - White / 7 inch"
                 },
                 {
-                    "DeviceCatalogId": 816,
+                    "devicecatalogid": 816,
                     "Tag": "Room scheduling touch screen - Black / 7 inch"
                 }
             ],
-            "Fullfillment": [
+            "fullfillment": [
                 {
                     "MarketPlaceResellerId": 1,
                     "ResellerName": "Unifiedcommunications.com",
                     "ResellerProductId": "9488",
                     "ResellerPrice": 1012,
                     "ResellerFormattedPrice": "₹1022.00",
-                    "InventoryStatus": 1,
+                    "inventorystatus": 1,
                     "StartingLeasePrice": 28.11,
-                    "StartingLeaseFormattedPrice": "₹101.11"
+                    "startingleaseformattedprice": "₹101.11"
                 }
             ]
         },
         {
-            "Images": [
+            "images": [
                 {
                   "altText": "10.1 Inch room scheduling touch screen white",
                   "blobURI": "https://devicescatalogimages.teams.cdn.office.net/deviceimagesprod/811/10.1Inchroomschedulingtouchscreenwhite-en-us-20210301T220402-1.png",
@@ -206,54 +206,54 @@
                   "Dimensions": "1280x720"
                 }
             ],
-            "Title": "Crestron - Room scheduling touch screen - White / 10 inch",
-            "MRP": "3999",
-            "DeviceSKU": "10.1 Inch room scheduling touch screen white",
-            "ShortDescription": "A touch screen wall mount designed specifically to run Microsoft Teams, with quick installation and web-based configuration. ",
-            "Description": "A stylish and versatile wall mount touch screen designed specifically to run the Microsoft Teams Panels scheduling application. It installs quickly and easily, with simple web-based configuration and cloud-based management and requires no control system or programming. ",
-            "DeviceCatalogId": 814,
-            "DeviceType": 1,
-            "Category": "Gifts",
-            "InventoryStatus": 1,
-            "ManufacturerName": "Crestron",
-            "MarketPlaceListingState": "3",
-            "Price": "₹1022.00",
-            "ResellerId": 1,
+            "title": "Crestron - Room scheduling touch screen - White / 10 inch",
+            "mrp": "3999",
+            "devicesku": "10.1 Inch room scheduling touch screen white",
+            "shortdescription": "A touch screen wall mount designed specifically to run Microsoft Teams, with quick installation and web-based configuration. ",
+            "description": "A stylish and versatile wall mount touch screen designed specifically to run the Microsoft Teams Panels scheduling application. It installs quickly and easily, with simple web-based configuration and cloud-based management and requires no control system or programming. ",
+            "devicecatalogid": 814,
+            "devicetype": 1,
+            "category": "Gifts",
+            "inventorystatus": 1,
+            "manufacturername": "Crestron",
+            "marketplacelistingstate": "3",
+            "price": "₹1022.00",
+            "resellerid": 1,
             "Specifications":[],
-            "StartingLeaseFormattedPrice":"₹101.11",
-            "Variants": [
+            "startingleaseformattedprice":"₹101.11",
+            "variants": [
                 {
-                    "DeviceCatalogId": 811,
+                    "devicecatalogid": 811,
                     "Tag": "Room scheduling touch screen - White / 10 inch"
                 },
                 {
-                    "DeviceCatalogId": 813,
+                    "devicecatalogid": 813,
                     "Tag": "Room scheduling touch screen - Black / 10 inch"
                 },
                 {
-                    "DeviceCatalogId": 814,
+                    "devicecatalogid": 814,
                     "Tag": "Room scheduling touch screen - White / 7 inch"
                 },
                 {
-                    "DeviceCatalogId": 816,
+                    "devicecatalogid": 816,
                     "Tag": "Room scheduling touch screen - Black / 7 inch"
                 }
             ],
-            "Fullfillment": [
+            "fullfillment": [
                 {
                     "MarketPlaceResellerId": 1,
                     "ResellerName": "Unifiedcommunications.com",
                     "ResellerProductId": "9488",
                     "ResellerPrice": 1012,
                     "ResellerFormattedPrice": "₹1022.00",
-                    "InventoryStatus": 1,
+                    "inventorystatus": 1,
                     "StartingLeasePrice": 28.11,
-                    "StartingLeaseFormattedPrice": "₹101.11"
+                    "startingleaseformattedprice": "₹101.11"
                 }
             ]
         },
         {
-            "Images": [
+            "images": [
                 {
                   "altText": "10.1 Inch room scheduling touch screen white",
                   "blobURI": "https://devicescatalogimages.teams.cdn.office.net/deviceimagesprod/811/10.1Inchroomschedulingtouchscreenwhite-en-us-20210301T220402-1.png",
@@ -269,54 +269,54 @@
                   "Dimensions": "1280x720"
                 }
             ],
-            "Title": "Crestron - Room scheduling touch screen - White / 10 inch",
-            "MRP": "3999",
-            "DeviceSKU": "10.1 Inch room scheduling touch screen white",
-            "ShortDescription": "A touch screen wall mount designed specifically to run Microsoft Teams, with quick installation and web-based configuration. ",
-            "Description": "A stylish and versatile wall mount touch screen designed specifically to run the Microsoft Teams Panels scheduling application. It installs quickly and easily, with simple web-based configuration and cloud-based management and requires no control system or programming. ",
-            "DeviceCatalogId": 815,
-            "DeviceType": 1,
-            "Category": "Gifts",
-            "InventoryStatus": 1,
-            "ManufacturerName": "Crestron",
-            "MarketPlaceListingState": "3",
-            "Price": "₹1022.00",
-            "ResellerId": 1,
+            "title": "Crestron - Room scheduling touch screen - White / 10 inch",
+            "mrp": "3999",
+            "devicesku": "10.1 Inch room scheduling touch screen white",
+            "shortdescription": "A touch screen wall mount designed specifically to run Microsoft Teams, with quick installation and web-based configuration. ",
+            "description": "A stylish and versatile wall mount touch screen designed specifically to run the Microsoft Teams Panels scheduling application. It installs quickly and easily, with simple web-based configuration and cloud-based management and requires no control system or programming. ",
+            "devicecatalogid": 815,
+            "devicetype": 1,
+            "category": "Gifts",
+            "inventorystatus": 1,
+            "manufacturername": "Crestron",
+            "marketplacelistingstate": "3",
+            "price": "₹1022.00",
+            "resellerid": 1,
             "Specifications":[],
-            "StartingLeaseFormattedPrice":"₹101.11",
-            "Variants": [
+            "startingleaseformattedprice":"₹101.11",
+            "variants": [
                 {
-                    "DeviceCatalogId": 811,
+                    "devicecatalogid": 811,
                     "Tag": "Room scheduling touch screen - White / 10 inch"
                 },
                 {
-                    "DeviceCatalogId": 813,
+                    "devicecatalogid": 813,
                     "Tag": "Room scheduling touch screen - Black / 10 inch"
                 },
                 {
-                    "DeviceCatalogId": 814,
+                    "devicecatalogid": 814,
                     "Tag": "Room scheduling touch screen - White / 7 inch"
                 },
                 {
-                    "DeviceCatalogId": 816,
+                    "devicecatalogid": 816,
                     "Tag": "Room scheduling touch screen - Black / 7 inch"
                 }
             ],
-            "Fullfillment": [
+            "fullfillment": [
                 {
                     "MarketPlaceResellerId": 1,
                     "ResellerName": "Unifiedcommunications.com",
                     "ResellerProductId": "9488",
                     "ResellerPrice": 1012,
                     "ResellerFormattedPrice": "₹1022.00",
-                    "InventoryStatus": 1,
+                    "inventorystatus": 1,
                     "StartingLeasePrice": 28.11,
-                    "StartingLeaseFormattedPrice": "₹101.11"
+                    "startingleaseformattedprice": "₹101.11"
                 }
             ]
         },
         {
-            "Images": [
+            "images": [
                 {
                   "altText": "10.1 Inch room scheduling touch screen white",
                   "blobURI": "https://devicescatalogimages.teams.cdn.office.net/deviceimagesprod/811/10.1Inchroomschedulingtouchscreenwhite-en-us-20210301T220402-1.png",
@@ -332,54 +332,54 @@
                   "Dimensions": "1280x720"
                 }
             ],
-            "Title": "Crestron - Room scheduling touch screen - White / 10 inch",
-            "MRP": "3999",
-            "DeviceSKU": "10.1 Inch room scheduling touch screen white",
-            "ShortDescription": "A touch screen wall mount designed specifically to run Microsoft Teams, with quick installation and web-based configuration. ",
-            "Description": "A stylish and versatile wall mount touch screen designed specifically to run the Microsoft Teams Panels scheduling application. It installs quickly and easily, with simple web-based configuration and cloud-based management and requires no control system or programming. ",
-            "DeviceCatalogId": 816,
-            "DeviceType": 1,
-            "Category": "Wearables",
-            "InventoryStatus": 1,
-            "ManufacturerName": "Crestron",
-            "MarketPlaceListingState": "3",
-            "Price": "₹1022.00",
-            "ResellerId": 1,
+            "title": "Crestron - Room scheduling touch screen - White / 10 inch",
+            "mrp": "3999",
+            "devicesku": "10.1 Inch room scheduling touch screen white",
+            "shortdescription": "A touch screen wall mount designed specifically to run Microsoft Teams, with quick installation and web-based configuration. ",
+            "description": "A stylish and versatile wall mount touch screen designed specifically to run the Microsoft Teams Panels scheduling application. It installs quickly and easily, with simple web-based configuration and cloud-based management and requires no control system or programming. ",
+            "devicecatalogid": 816,
+            "devicetype": 1,
+            "category": "Wearables",
+            "inventorystatus": 1,
+            "manufacturername": "Crestron",
+            "marketplacelistingstate": "3",
+            "price": "₹1022.00",
+            "resellerid": 1,
             "Specifications":[],
-            "StartingLeaseFormattedPrice":"₹101.11",
-            "Variants": [
+            "startingleaseformattedprice":"₹101.11",
+            "variants": [
                 {
-                    "DeviceCatalogId": 811,
+                    "devicecatalogid": 811,
                     "Tag": "Room scheduling touch screen - White / 10 inch"
                 },
                 {
-                    "DeviceCatalogId": 813,
+                    "devicecatalogid": 813,
                     "Tag": "Room scheduling touch screen - Black / 10 inch"
                 },
                 {
-                    "DeviceCatalogId": 814,
+                    "devicecatalogid": 814,
                     "Tag": "Room scheduling touch screen - White / 7 inch"
                 },
                 {
-                    "DeviceCatalogId": 816,
+                    "devicecatalogid": 816,
                     "Tag": "Room scheduling touch screen - Black / 7 inch"
                 }
             ],
-            "Fullfillment": [
+            "fullfillment": [
                 {
                     "MarketPlaceResellerId": 1,
                     "ResellerName": "Unifiedcommunications.com",
                     "ResellerProductId": "9488",
                     "ResellerPrice": 1012,
                     "ResellerFormattedPrice": "₹1022.00",
-                    "InventoryStatus": 1,
+                    "inventorystatus": 1,
                     "StartingLeasePrice": 28.11,
-                    "StartingLeaseFormattedPrice": "₹101.11"
+                    "startingleaseformattedprice": "₹101.11"
                 }
             ]
         },
         {
-            "Images": [
+            "images": [
                 {
                   "altText": "10.1 Inch room scheduling touch screen white",
                   "blobURI": "https://devicescatalogimages.teams.cdn.office.net/deviceimagesprod/811/10.1Inchroomschedulingtouchscreenwhite-en-us-20210301T220402-1.png",
@@ -395,54 +395,54 @@
                   "Dimensions": "1280x720"
                 }
             ],
-            "Title": "Crestron - Room scheduling touch screen - White / 10 inch",
-            "MRP": "3999",
-            "DeviceSKU": "10.1 Inch room scheduling touch screen white",
-            "ShortDescription": "A touch screen wall mount designed specifically to run Microsoft Teams, with quick installation and web-based configuration. ",
-            "Description": "A stylish and versatile wall mount touch screen designed specifically to run the Microsoft Teams Panels scheduling application. It installs quickly and easily, with simple web-based configuration and cloud-based management and requires no control system or programming. ",
-            "DeviceCatalogId": 817,
-            "DeviceType": 1,
-            "Category": "Gifts",
-            "InventoryStatus": 1,
-            "ManufacturerName": "Crestron",
-            "MarketPlaceListingState": "3",
-            "Price": "₹1022.00",
-            "ResellerId": 1,
+            "title": "Crestron - Room scheduling touch screen - White / 10 inch",
+            "mrp": "3999",
+            "devicesku": "10.1 Inch room scheduling touch screen white",
+            "shortdescription": "A touch screen wall mount designed specifically to run Microsoft Teams, with quick installation and web-based configuration. ",
+            "description": "A stylish and versatile wall mount touch screen designed specifically to run the Microsoft Teams Panels scheduling application. It installs quickly and easily, with simple web-based configuration and cloud-based management and requires no control system or programming. ",
+            "devicecatalogid": 817,
+            "devicetype": 1,
+            "category": "Gifts",
+            "inventorystatus": 1,
+            "manufacturername": "Crestron",
+            "marketplacelistingstate": "3",
+            "price": "₹1022.00",
+            "resellerid": 1,
             "Specifications":[],
-            "StartingLeaseFormattedPrice":"₹101.11",
-            "Variants": [
+            "startingleaseformattedprice":"₹101.11",
+            "variants": [
                 {
-                    "DeviceCatalogId": 811,
+                    "devicecatalogid": 811,
                     "Tag": "Room scheduling touch screen - White / 10 inch"
                 },
                 {
-                    "DeviceCatalogId": 813,
+                    "devicecatalogid": 813,
                     "Tag": "Room scheduling touch screen - Black / 10 inch"
                 },
                 {
-                    "DeviceCatalogId": 814,
+                    "devicecatalogid": 814,
                     "Tag": "Room scheduling touch screen - White / 7 inch"
                 },
                 {
-                    "DeviceCatalogId": 816,
+                    "devicecatalogid": 816,
                     "Tag": "Room scheduling touch screen - Black / 7 inch"
                 }
             ],
-            "Fullfillment": [
+            "fullfillment": [
                 {
                     "MarketPlaceResellerId": 1,
                     "ResellerName": "Unifiedcommunications.com",
                     "ResellerProductId": "9488",
                     "ResellerPrice": 1012,
                     "ResellerFormattedPrice": "₹1022.00",
-                    "InventoryStatus": 1,
+                    "inventorystatus": 1,
                     "StartingLeasePrice": 28.11,
-                    "StartingLeaseFormattedPrice": "₹101.11"
+                    "startingleaseformattedprice": "₹101.11"
                 }
             ]
         },
         {
-            "Images": [
+            "images": [
                 {
                   "altText": "10.1 Inch room scheduling touch screen white",
                   "blobURI": "https://devicescatalogimages.teams.cdn.office.net/deviceimagesprod/811/10.1Inchroomschedulingtouchscreenwhite-en-us-20210301T220402-1.png",
@@ -458,54 +458,54 @@
                   "Dimensions": "1280x720"
                 }
             ],
-            "Title": "Crestron - Room scheduling touch screen - White / 10 inch",
-            "MRP": "3999",
-            "DeviceSKU": "10.1 Inch room scheduling touch screen white",
-            "ShortDescription": "A touch screen wall mount designed specifically to run Microsoft Teams, with quick installation and web-based configuration. ",
-            "Description": "A stylish and versatile wall mount touch screen designed specifically to run the Microsoft Teams Panels scheduling application. It installs quickly and easily, with simple web-based configuration and cloud-based management and requires no control system or programming. ",
-            "DeviceCatalogId": 818,
-            "DeviceType": 1,
-            "Category": "Gifts",
-            "InventoryStatus": 1,
-            "ManufacturerName": "Crestron",
-            "MarketPlaceListingState": "3",
-            "Price": "₹1022.00",
-            "ResellerId": 1,
+            "title": "Crestron - Room scheduling touch screen - White / 10 inch",
+            "mrp": "3999",
+            "devicesku": "10.1 Inch room scheduling touch screen white",
+            "shortdescription": "A touch screen wall mount designed specifically to run Microsoft Teams, with quick installation and web-based configuration. ",
+            "description": "A stylish and versatile wall mount touch screen designed specifically to run the Microsoft Teams Panels scheduling application. It installs quickly and easily, with simple web-based configuration and cloud-based management and requires no control system or programming. ",
+            "devicecatalogid": 818,
+            "devicetype": 1,
+            "category": "Gifts",
+            "inventorystatus": 1,
+            "manufacturername": "Crestron",
+            "marketplacelistingstate": "3",
+            "price": "₹1022.00",
+            "resellerid": 1,
             "Specifications":[],
-            "StartingLeaseFormattedPrice":"₹101.11",
-            "Variants": [
+            "startingleaseformattedprice":"₹101.11",
+            "variants": [
                 {
-                    "DeviceCatalogId": 811,
+                    "devicecatalogid": 811,
                     "Tag": "Room scheduling touch screen - White / 10 inch"
                 },
                 {
-                    "DeviceCatalogId": 813,
+                    "devicecatalogid": 813,
                     "Tag": "Room scheduling touch screen - Black / 10 inch"
                 },
                 {
-                    "DeviceCatalogId": 814,
+                    "devicecatalogid": 814,
                     "Tag": "Room scheduling touch screen - White / 7 inch"
                 },
                 {
-                    "DeviceCatalogId": 816,
+                    "devicecatalogid": 816,
                     "Tag": "Room scheduling touch screen - Black / 7 inch"
                 }
             ],
-            "Fullfillment": [
+            "fullfillment": [
                 {
                     "MarketPlaceResellerId": 1,
                     "ResellerName": "Unifiedcommunications.com",
                     "ResellerProductId": "9488",
                     "ResellerPrice": 1012,
                     "ResellerFormattedPrice": "₹1022.00",
-                    "InventoryStatus": 1,
+                    "inventorystatus": 1,
                     "StartingLeasePrice": 28.11,
-                    "StartingLeaseFormattedPrice": "₹101.11"
+                    "startingleaseformattedprice": "₹101.11"
                 }
             ]
         },
         {
-            "Images": [
+            "images": [
                 {
                   "altText": "10.1 Inch room scheduling touch screen white",
                   "blobURI": "https://devicescatalogimages.teams.cdn.office.net/deviceimagesprod/811/10.1Inchroomschedulingtouchscreenwhite-en-us-20210301T220402-1.png",
@@ -521,49 +521,49 @@
                   "Dimensions": "1280x720"
                 }
             ],
-            "Title": "Crestron - Room scheduling touch screen - White / 10 inch",
-            "MRP": "3999",
-            "DeviceSKU": "10.1 Inch room scheduling touch screen white",
-            "ShortDescription": "A touch screen wall mount designed specifically to run Microsoft Teams, with quick installation and web-based configuration. ",
-            "Description": "A stylish and versatile wall mount touch screen designed specifically to run the Microsoft Teams Panels scheduling application. It installs quickly and easily, with simple web-based configuration and cloud-based management and requires no control system or programming. ",
-            "DeviceCatalogId": 819,
-            "DeviceType": 1,
-            "Category": "Gifts",
-            "InventoryStatus": 0,
-            "ManufacturerName": "Crestron",
-            "MarketPlaceListingState": "3",
-            "Price": "₹1022.00",
-            "ResellerId": 1,
+            "title": "Crestron - Room scheduling touch screen - White / 10 inch",
+            "mrp": "3999",
+            "devicesku": "10.1 Inch room scheduling touch screen white",
+            "shortdescription": "A touch screen wall mount designed specifically to run Microsoft Teams, with quick installation and web-based configuration. ",
+            "description": "A stylish and versatile wall mount touch screen designed specifically to run the Microsoft Teams Panels scheduling application. It installs quickly and easily, with simple web-based configuration and cloud-based management and requires no control system or programming. ",
+            "devicecatalogid": 819,
+            "devicetype": 1,
+            "category": "Gifts",
+            "inventorystatus": 0,
+            "manufacturername": "Crestron",
+            "marketplacelistingstate": "3",
+            "price": "₹1022.00",
+            "resellerid": 1,
             "Specifications":[],
-            "StartingLeaseFormattedPrice":"₹101.11",
-            "Variants": [
+            "startingleaseformattedprice":"₹101.11",
+            "variants": [
                 {
-                    "DeviceCatalogId": 811,
+                    "devicecatalogid": 811,
                     "Tag": "Room scheduling touch screen - White / 10 inch"
                 },
                 {
-                    "DeviceCatalogId": 813,
+                    "devicecatalogid": 813,
                     "Tag": "Room scheduling touch screen - Black / 10 inch"
                 },
                 {
-                    "DeviceCatalogId": 814,
+                    "devicecatalogid": 814,
                     "Tag": "Room scheduling touch screen - White / 7 inch"
                 },
                 {
-                    "DeviceCatalogId": 816,
+                    "devicecatalogid": 816,
                     "Tag": "Room scheduling touch screen - Black / 7 inch"
                 }
             ],
-            "Fullfillment": [
+            "fullfillment": [
                 {
                     "MarketPlaceResellerId": 1,
                     "ResellerName": "Unifiedcommunications.com",
                     "ResellerProductId": "9488",
                     "ResellerPrice": 1012,
                     "ResellerFormattedPrice": "₹1022.00",
-                    "InventoryStatus": 1,
+                    "inventorystatus": 1,
                     "StartingLeasePrice": 28.11,
-                    "StartingLeaseFormattedPrice": "₹101.11"
+                    "startingleaseformattedprice": "₹101.11"
                 }
             ]
         }

@@ -1,14 +1,51 @@
-import React from 'react'
+'use client'
+
+import React, { useEffect } from 'react'
+import Link from 'next/link'
+import { useSelector, useDispatch } from "react-redux";
 import ProductCard from './ProductCard/ProductCard'
-import { ProductDetails } from '../Constants/ProductData.json'
 import { see_all } from '../Constants/constant'
 import classes from './JainKartBody.module.css'
-import Link from 'next/link'
 import LeftSideBar from './LeftSideBar/LeftSideBar'
 import { splitByCategory } from '../utils/commonFunctions'
+import { fetchAllData } from '../utils/fetchApiHelper'
+import { jainsKartAllData } from "@/redux/actions/jainsKartAllData";
+// import { ProductDetails } from '../Constants/ProductData.json'
+
+
+// Task Pending
+//  Two error
+//  1. dialog error in jain's kart header
+//  2. on click of edit in product page it will take to admin form when useRouter is failling 
+// Place Loader -> loading and No Data Should be differentiated
+// update product data on click of edit button
+
 
 const JainKartBody = () => {
-  const categories = splitByCategory(ProductDetails)
+  const dispatch = useDispatch()
+  const jainsKartReduxData = useSelector((state) => state.jainsKartAllData);
+  const categories = splitByCategory(jainsKartReduxData)
+  // const categories = splitByCategory(ProductDetails)
+
+  const setFetchAllData = async () => {
+    const fetchData = await fetchAllData()
+    const finalData = fetchData.map(element => {
+      return({
+        ...element,
+        images: JSON.parse(element.images),
+        variants: JSON.parse(element.variants),
+      })
+    });
+    dispatch(jainsKartAllData(finalData))
+  }
+
+  useEffect(() => {
+    setFetchAllData()
+  }, [])
+
+  if(jainsKartReduxData.length<1){
+    return <h2> Loading... </h2>
+  }
 
   return (
     <div className={classes.mainBodyContainer}>
@@ -27,8 +64,8 @@ const JainKartBody = () => {
             <div className={classes.categoryContainer}>
               {categories[category].map((item, index) => {
                 return(
-                  <React.Fragment key={item.DeviceCatalogId}>
-                    { index<4 && <ProductCard cardDetails={item}/>}
+                  <React.Fragment key={item.devicecatalogid}>
+                    { index<4 && <ProductCard cardDetails={item} setFetchAllData={setFetchAllData}/>}
                   </React.Fragment> 
                 )
               })}
