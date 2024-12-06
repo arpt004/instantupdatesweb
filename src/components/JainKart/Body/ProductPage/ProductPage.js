@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -10,36 +10,59 @@ import {
   DialogSurface,
   Image,
 } from "@fluentui/react-components";
-import { Dismiss24Filled, ChevronRight16Filled } from "@fluentui/react-icons";
-import { ProductDetails } from "../../Constants/ProductData.json";
+import { Dismiss24Filled, ChevronRight16Filled, Edit24Regular } from "@fluentui/react-icons";
+// import { ProductDetails } from "../../Constants/ProductData.json";
 import classes from "./ProductPage.module.css";
 import Link from "next/link";
 import ProductImageGallery from "./ProductImageGallery/ProductImageGallery";
 import ModalImageGallery from "./ModalImageGallery/ModalImageGallery";
 import { cartCount, cartData } from "@/redux/actions/cartController";
-
-const filterByProductId = (filterId) => {
-  const filteredData = ProductDetails.filter(
-    (item) => item.DeviceCatalogId === Number(filterId)
-  );
-  return filteredData[0];
-};
+import { filterByProductId } from "../../utils/commonFunctions";
+import NotFound from "../NotFound";
+import { fetchAllData } from "../../utils/fetchApiHelper";
+import { jainsKartAllData, jainsKartSelectedProduct } from "@/redux/actions/jainsKartAllData";
+import { adminJainsKart } from "@/redux/actions/adminJainsKart";
 
 const ProductPage = ({ product_id }) => {
   const router = useRouter();
   const dispatch = useDispatch();
   const cartReduxCount = useSelector((state) => state.cartCount);
   const cartReduxData = useSelector((state) => state.cartData);
+  const ProductDetails = useSelector((state) => state.jainsKartAllData);
+  const authToken = useSelector((state) => state.adminJainsKart);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
-  const ProductData = filterByProductId(product_id);
+
+  useEffect(() => {
+    const authValue = sessionStorage.getItem('authJainsKart');
+    const salt = process.env.NEXT_PUBLIC_SALT;
+    if(salt === authValue) dispatch(adminJainsKart(true));
+    else dispatch(adminJainsKart(false));
+  }, []);
+
+  const setFetchAllData = async () => {
+    const fetchData = await fetchAllData()
+    const finalData = fetchData.map(element => {
+      return({
+        ...element,
+        images: JSON.parse(element.images),
+        variants: JSON.parse(element.variants),
+      })
+    });
+    dispatch(jainsKartAllData(finalData))
+  }
+  
+  let ProductData = []
+  if(ProductDetails.length<1) setFetchAllData()
+  else ProductData = filterByProductId(product_id, ProductDetails);
 
   const handleImageClick = () => {
     setIsModalOpen(true);
   };
 
   const handleOptionChange = (e) => {
-    router.push(`/jains-kart/product/${e.target.value}`);
+    const checkValue = e.target.value
+    if(checkValue) router.push(`/jains-kart/product/${checkValue}`);
   };
 
   const handleCloseModal = () => {
@@ -54,19 +77,19 @@ const ProductPage = ({ product_id }) => {
     setIsModalOpen(false);
 
     const dataObject = {
-      DeviceSKU: AddProductData.DeviceSKU,
-      ManufacturerName: AddProductData.ManufacturerName,
-      Price: AddProductData.Price,
-      Images: AddProductData.Images,
-      DeviceCatalogId: AddProductData.DeviceCatalogId,
+      devicesku: AddProductData.devicesku,
+      manufacturername: AddProductData.manufacturername,
+      price: AddProductData.price,
+      images: AddProductData.images,
+      devicecatalogid: AddProductData.devicecatalogid,
       quantity: 1,
     }
 
-    const checkForId = cartReduxData.find(item => item.DeviceCatalogId === AddProductData.DeviceCatalogId)
+    const checkForId = cartReduxData.find(item => item.devicecatalogid === AddProductData.devicecatalogid)
     let dataArray = []
     if(checkForId){
       cartReduxData.forEach(element => {
-        if(element.DeviceCatalogId === AddProductData.DeviceCatalogId){
+        if(element.devicecatalogid === AddProductData.devicecatalogid){
           dataObject.quantity = Number(element.quantity) + 1
           dataArray.push(dataObject)
         } else {
@@ -80,26 +103,39 @@ const ProductPage = ({ product_id }) => {
     dispatch(cartData(dataArray))
   };
 
+  const handleEditClick = () => {
+    dispatch(jainsKartSelectedProduct(ProductData));
+    router.push(`/jains-kart/admin`)
+  }
+
   const selectedVariant =
-    ProductData.Variants?.find(
-      (variant) => variant.DeviceCatalogId === product_id
-    )?.Tag || "";
+    ProductData?.variants?.find(
+      (variant) => variant.devicecatalogid === product_id
+    )?.devicecatalogid || "";
+
+  if(!ProductData) return <NotFound />
 
   return (
     <div className={classes.cardContianer}>
       <div className={classes.card}>
+        { authToken && 
+          <Button className={classes.adminEditButton} onClick={handleEditClick}  > 
+            <Edit24Regular />
+          </Button> 
+        }
+
         <div className={classes.cardContent}>
           <div className={classes.imageContainer}>
-            {ProductData.Images?.length <= 1 ? ( 
+            {ProductData.images?.length <= 1 ? ( 
               <Image
-                src={ProductData.Images[0].blobURI}
-                alt={ProductData.Images[0].altText}
+                src={ProductData.images[0].blobURI}
+                alt={ProductData.images[0].altText}
                 className={classes.image}
                 onClick={handleImageClick}
               />
             ) : (
               <ProductImageGallery
-                images={ProductData.Images}
+                images={ProductData.images}
                 handleImageClick={handleImageClick}
                 setSelectedImage={setSelectedImage}
               />
@@ -107,52 +143,56 @@ const ProductPage = ({ product_id }) => {
           </div>
 
           <div className={classes.productDetails}>
-            <h2 className={classes.deviceSKU}> {ProductData.DeviceSKU} </h2>
+            <h2 className={classes.deviceSKU}> {ProductData.devicesku} </h2>
             <h3 className={classes.manufacturerName}>
               {" "}
               {ProductData.ManufacturerName}{" "}
             </h3>
-            <p className={classes.description}> {ProductData.Description} </p>
+            <p className={classes.description}> {ProductData.description} </p>
             <h2
               className={
-                ProductData.Price && ProductData.InventoryStatus > 0
+                ProductData.price && ProductData.inventorystatus > 0
                   ? classes.price
                   : classes.outOfStock
               }
             >
-              {ProductData.Price && ProductData.InventoryStatus > 0
-                ? ProductData.Price
+              {ProductData.price && ProductData.inventorystatus > 0
+                ? ProductData.price
                 : "Out Of Stock"}
             </h2>
-            <p className={classes.mrp}> ₹{ProductData.MRP} </p>
-            {ProductData.StartingLeaseFormattedPrice && (
+            <p className={classes.mrp}> ₹{ProductData.mrp} </p>
+            {ProductData.startingleaseformattedprice && (
               <p className={classes.leasingOptions}>
                 {" "}
                 Leasing options available starting at{" "}
-                {ProductData.StartingLeaseFormattedPrice}/mo{" "}
+                {ProductData.startingleaseformattedprice}/mo{" "}
               </p>
             )}
 
-            {!!ProductData.Variants?.length && (
-              <select
-                role="combobox"
-                defaultValue={selectedVariant}
-                className={classes.dropdown}
-                onChange={handleOptionChange}
-                aria-label="variants"
-                title="variants"
-              >
-                {ProductData.Variants.map((variant) => {
-                  return (
-                    <option
-                      key={variant.DeviceCatalogId}
-                      value={variant.DeviceCatalogId}
-                    >
-                      {variant.Tag}
-                    </option>
-                  );
-                })}
-              </select>
+            {!!ProductData.variants?.length && (
+              <>
+                <label> Variants : </label>
+                <select
+                  role="combobox"
+                  defaultValue={selectedVariant}
+                  className={classes.dropdown}
+                  onChange={handleOptionChange}
+                  aria-label="variants"
+                  title="variants"
+                >
+                  <option value=''> Select </option>
+                  {ProductData.variants.map((variant) => {
+                    return (
+                      <option
+                        key={variant.devicecatalogid}
+                        value={variant.devicecatalogid}
+                      >
+                        {variant.Tag}
+                      </option>
+                    );
+                  })}
+                </select>
+              </>
             )}
 
             <div>
@@ -160,7 +200,7 @@ const ProductPage = ({ product_id }) => {
                 className={classes.buyNowButton}
                 title="Buy Now"
                 onClick={handleBuyNow}
-                disabled={!ProductData.Price || ProductData.InventoryStatus <= 0}
+                disabled={!ProductData.price || ProductData.inventorystatus <= 0}
               >
                 Buy Now
               </button>
@@ -169,7 +209,7 @@ const ProductPage = ({ product_id }) => {
                 className={classes.buyNowButton}
                 title="Add to Cart"
                 onClick={() => handleAddToCart(ProductData)}
-                disabled={!ProductData.Price || ProductData.InventoryStatus <= 0}
+                disabled={!ProductData.price || ProductData.inventorystatus <= 0}
               >
                 Add to Cart
               </button>
@@ -177,7 +217,7 @@ const ProductPage = ({ product_id }) => {
           </div>
         </div>
 
-        {ProductData.StartingLeaseFormattedPrice ? (
+        {ProductData.startingleaseformattedprice ? (
           <div className={classes.financingOption}>
             <span>
               Monthly financing options available in shopping cart with
@@ -216,15 +256,15 @@ const ProductPage = ({ product_id }) => {
                   >
                     <Dismiss24Filled />
                   </Button>
-                  {ProductData.Images.length <= 1 ? (
+                  {ProductData.images.length <= 1 ? (
                     <Image
-                      src={ProductData.Images[0].blobURI}
-                      alt={ProductData.Images[0].altText}
+                      src={ProductData.images[0].blobURI}
+                      alt={ProductData.images[0].altText}
                       className={classes.modalImage}
                     />
                   ) : (
                     <ModalImageGallery
-                      imageArray={ProductData.Images}
+                      imageArray={ProductData.images}
                       selectedImage={selectedImage}
                     />
                   )}

@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
 import classes from './ImageUploader.module.css'; // Add your CSS file
 
-const ImageUploader = () => {
-  const [images, setImages] = useState([]);
+const ImageUploader = ({images, setImages}) => {
 
   const handleImageUpload = (event) => {
     const files = Array.from(event.target.files);
     const imageFiles = files.filter(file => file.type.startsWith('image/'));
-    const imageUrls = imageFiles.map(file => URL.createObjectURL(file));
-    setImages(prevImages => [...prevImages, ...imageUrls]);
+    let imageObject = imageFiles.map((file) => {
+      return({
+        imageUrls: URL.createObjectURL(file),
+        imageName: file.name
+      })
+    })
+
+    setImages(prevImages => [...prevImages, ...imageObject]);
   };
 
   const handleImageDelete = (index) => {
@@ -26,8 +31,8 @@ const ImageUploader = () => {
       <div className={classes.image_preview}>
         {images.map((src, index) => (
           <div className={classes.image_container} key={index}>
-            <img src={src} alt={`uploaded-img-${index}`} className={classes.image} />
-            <button onClick={() => handleImageDelete(index)}>✕</button>
+            <img src={src.imageUrls} alt={`uploaded-img-${index}`} className={classes.image} />
+            <button onClick={() => handleImageDelete(index)}> &times; </button>
           </div>
         ))}
       </div>

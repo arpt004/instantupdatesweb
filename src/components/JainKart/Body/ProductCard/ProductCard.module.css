@@ -6,6 +6,7 @@
     padding: 1rem;
     margin: 0.8rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 .card:hover{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -43,6 +44,44 @@
     margin: 0;
     padding: 0 0.5rem;
     color: #000;
+}
+.adminDeleteButton{
+    z-index: 3;
+    background: #fff;
+    border: none;
+    position: absolute;
+    right: 0.2rem;
+    top: 0.2rem;
+}
+.modalButton svg{
+    margin-right: -2rem;
+}
+.modalInnerContainer{
+    background: #fff;
+    border-radius: 1rem;
+    display: block !important;
+    padding: 1rem 0;
+    text-align: end;
+}
+.modalContent{
+    padding: 1rem 2rem;
+    text-align: left;
+}
+.modalButtonContainer{
+    padding: 1rem 2rem;
+}
+.modalCancelButton{
+    color: #fff !important;
+    padding: 0.5rem 1.5rem !important;
+    border-radius: 0.5rem !important;
+    background-color: #514fc5 !important;
+    margin-right: 1rem !important;
+}
+.modalDeleteButton{
+    color: #fff !important;
+    padding: 0.5rem 1.5rem !important;
+    border-radius: 0.5rem !important;
+    background-color: #b4361d !important;
 }
 
 /* Media Query */

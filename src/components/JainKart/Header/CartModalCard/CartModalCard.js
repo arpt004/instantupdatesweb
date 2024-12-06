@@ -20,7 +20,7 @@ const CartModalCard = ({setCartModal, isMobile}) => {
     const [ freezeQuantity, setFreezeQuantity] = useState(false)
 
     const totalSum = cartReduxData.reduce((accumulator, item) => {
-        return accumulator + parseFloat(item.Price.replace('₹','')) * item.quantity
+        return accumulator + parseFloat(item.price.replace('₹','')) * item.quantity
     }, 0)
 
     console.log(cartReduxData)
@@ -30,7 +30,7 @@ const CartModalCard = ({setCartModal, isMobile}) => {
         if(newQuantity<1) newQuantity = 1
 
         const updateCart = cartReduxData.map((cart) => {
-            return cart.DeviceCatalogId === cartItem.DeviceCatalogId ? { ...cart, quantity: newQuantity } : cart
+            return cart.devicecatalogid === cartItem.devicecatalogid ? { ...cart, quantity: newQuantity } : cart
         })
 
         dispatch(cartData(updateCart))
@@ -41,7 +41,7 @@ const CartModalCard = ({setCartModal, isMobile}) => {
 
     const handleItemDelete = (cartItem) => {
         const filterData = cartReduxData.filter(
-            (item) => item.DeviceCatalogId !== cartItem.DeviceCatalogId,
+            (item) => item.devicecatalogid !== cartItem.devicecatalogid,
         )
         dispatch(cartData(filterData))
         const totalCount = totalQuantity(filterData)
@@ -69,8 +69,8 @@ const CartModalCard = ({setCartModal, isMobile}) => {
                     <hr />
                     <div>
                         <Image
-                            src={cartItem.Images[0].blobURI}
-                            alt={cartItem.Images[0].altText}
+                            src={cartItem.images[0].blobURI}
+                            alt={cartItem.images[0].altText}
                             className={classes.tableMobileImage}
                         />
                         <Button
@@ -81,8 +81,8 @@ const CartModalCard = ({setCartModal, isMobile}) => {
                             onClick={() => handleItemDelete(cartItem)}
                         />  
                     </div>
-                    <h3> {cartItem.DeviceSKU} </h3>
-                    <h2> {cartItem.Price} </h2>
+                    <h3> {cartItem.devicesku} </h3>
+                    <h2> {cartItem.price} </h2>
                     <div>
                         {freezeQuantity ? (
                                 <> {cartItem.quantity} </>
@@ -98,7 +98,7 @@ const CartModalCard = ({setCartModal, isMobile}) => {
                         )} 
                     </div>
                     <p>  
-                        ₹{(parseFloat(cartItem.Price.replace('₹','')) * cartItem.quantity).toFixed(2)}  
+                        ₹{(parseFloat(cartItem.price.replace('₹','')) * cartItem.quantity).toFixed(2)}  
                     </p>
                 </div>
                )
@@ -129,17 +129,17 @@ const CartModalCard = ({setCartModal, isMobile}) => {
                                 <TableCell tabIndex={0} role='gridcell'>
                                     <TableCellLayout>
                                         <Image
-                                            src={cartItem.Images[0].blobURI}
-                                            alt={cartItem.Images[0].altText}
+                                            src={cartItem.images[0].blobURI}
+                                            alt={cartItem.images[0].altText}
                                             className={classes.tableImage}
                                         />
                                     </TableCellLayout>
                                 </TableCell>
                                 <TableCell tabIndex={0} role='gridcell'>
-                                    {cartItem.DeviceSKU}
+                                    {cartItem.devicesku}
                                 </TableCell>
                                 <TableCell tabIndex={0} role='gridcell'>
-                                    {cartItem.Price}
+                                    {cartItem.price}
                                 </TableCell>
                                 <TableCell tabIndex={0} role='gridcell'>
                                     {freezeQuantity ? (
@@ -156,7 +156,7 @@ const CartModalCard = ({setCartModal, isMobile}) => {
                                     )}                            
                                 </TableCell>
                                 <TableCell tabIndex={0} role='gridcell'>
-                                    ₹{(parseFloat(cartItem.Price.replace('₹','')) * cartItem.quantity).toFixed(2)}                          
+                                    ₹{(parseFloat(cartItem.price.replace('₹','')) * cartItem.quantity).toFixed(2)}                          
                                 </TableCell>
                                 <TableCell tabIndex={0} role='gridcell'>
                                     <Button
