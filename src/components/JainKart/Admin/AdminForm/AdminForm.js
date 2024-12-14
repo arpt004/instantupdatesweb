@@ -57,14 +57,23 @@ const AdminForm = () => {
               device_SKU: jainsKartSelectedProduct.devicesku,
               category: jainsKartSelectedProduct.category,
               manufacturer_name: jainsKartSelectedProduct.manufacturername,
-              inventory: jainsKartSelectedProduct.inventorystatus,
-              price: jainsKartSelectedProduct.price,
-              mrp: jainsKartSelectedProduct.mrp,
+              inventory: +jainsKartSelectedProduct.inventorystatus,
+              price: +jainsKartSelectedProduct.price,
+              mrp: +jainsKartSelectedProduct.mrp,
               description: jainsKartSelectedProduct.description,
             }
 
             setFromData(tempFormData)
-            setImages(jainsKartSelectedProduct.images)
+
+            const previousImages = []
+            jainsKartSelectedProduct.images.forEach( eachEle => {
+                const tempImageObj = {
+                    "imageUrls": eachEle.blobURI,
+                    "imageName": eachEle.altText
+                }
+                previousImages.push(tempImageObj)
+            })
+            setImages(previousImages)
             setIdName(jainsKartSelectedProduct.variants)
             const tempIdName = {}
             const tempVariants = []
@@ -98,14 +107,15 @@ const AdminForm = () => {
             "mrp": "4342342",
             "category": "Gifts",
             "description": "sawwd"
-        }
+        }           
 
         try{
-            const uploadResponse = await fetch(`/api/jains-kart/upload-multiple`,
-              {
-                method: 'POST',
-                body: JSON.stringify(images),
-              },
+            let urlImageUpload = '/api/jains-kart/upload-multiple'
+            const uploadResponse = await fetch(urlImageUpload,
+                {
+                    method: 'POST',
+                    body: JSON.stringify(images),
+                },
             );
             if(uploadResponse.ok){
                 const res = await uploadResponse.json()
@@ -127,7 +137,7 @@ const AdminForm = () => {
                 })               
 
                 let newData = {    
-                    devicecatalogid: generateUniqueId(), 
+                    devicecatalogid: Object.keys(jainsKartSelectedProduct).length >= 1 ? jainsKartSelectedProduct.devicecatalogid : generateUniqueId(), 
                     title: formData.title, 
                     mrp: formData.mrp , 
                     devicesku: formData.device_SKU, 
@@ -145,19 +155,22 @@ const AdminForm = () => {
                     variants: JSON.stringify(variantsWithTags)
                 }
 
-                const responseInsertOne = await fetch( `/api/jains-kart/insert-product-data`, 
+                let url = '/api/jains-kart/insert-product-data'
+                if(Object.keys(jainsKartSelectedProduct).length >= 1) url = '/api/jains-kart/update-product-data'
+                const responseInsertOne = await fetch(url, 
                     {
-                      method: 'POST',
-                      headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                      },
-                      body: JSON.stringify(newData),
+                    method: 'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(newData),
                     },
                 );
                 console.log(responseInsertOne)
                 if(responseInsertOne.ok){
-                    console.log('successful insertion')
+                    if(Object.keys(jainsKartSelectedProduct).length >= 1) console.log('successful updation')
+                    else console.log('successful insertion')
                     setFromData({})
                 }
 
@@ -167,7 +180,7 @@ const AdminForm = () => {
             }
         }catch(error) {
             console.log(error);
-        }
+        }        
     }
 
     const handleCategoryChange = (e) => {
@@ -224,6 +237,8 @@ const AdminForm = () => {
         console.log(formData)
         console.log(images)
         console.log(variantList)
+        console.log(jainsKartSelectedProduct)
+        console.log(ProductDetails)      
     }
 
   return (

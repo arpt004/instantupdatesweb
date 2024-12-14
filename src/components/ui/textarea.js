@@ -15,7 +15,7 @@ export default function TextArea({label, placeholder, formData, setFromData}) {
         {true && <p className={classes.star}>*</p> }
       </label>
       <textarea className={classes.input +" "+ classes.textarea} placeholder={placeholder} required 
-        onChange={handleChange} value={formData[label]} name={label}
+        onChange={handleChange} defaultValue={formData[label]} name={label}
       />
     </div>
   )

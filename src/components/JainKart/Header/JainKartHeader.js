@@ -147,7 +147,7 @@ const JainKartHeader = () => {
               <Button className={classes.modalButton} onClick={handleCloseCart}>
                 <Dismiss24Filled />
               </Button>
-              <CartModalCard setCartModal={setCartModal} isMobile={isMobile}/>
+              <CartModalCard setCartModal={setCartModal} isMobile={isMobile} handleCloseCart={handleCloseCart}/>
             </>          
           </DialogBody>
         </DialogSurface>
