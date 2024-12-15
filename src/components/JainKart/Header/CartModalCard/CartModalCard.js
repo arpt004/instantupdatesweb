@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import { useRouter } from 'next/navigation';
 import { Image, Button, Table, TableBody, TableCell, TableCellLayout, TableHeader, TableHeaderCell, TableRow } from '@fluentui/react-components';
 import { TextField } from '@fluentui/react';
 import { Delete20Regular } from '@fluentui/react-icons';
@@ -14,8 +15,9 @@ const totalQuantity = (cartDetails) => {
     }, 0)
 }
 
-const CartModalCard = ({setCartModal, isMobile}) => {
+const CartModalCard = ({setCartModal, isMobile, handleCloseCart}) => {
     const dispatch = useDispatch();
+    const router = useRouter()
     const cartReduxData = useSelector((state) => state.cartData);
     const [ freezeQuantity, setFreezeQuantity] = useState(false)
 
@@ -56,6 +58,8 @@ const CartModalCard = ({setCartModal, isMobile}) => {
         setTimeout(() => {
             setFreezeQuantity(false)
         }, 2000);
+        handleCloseCart()
+        router.push('/jains-kart/checkout')
     }
 
   return (

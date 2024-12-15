@@ -21,11 +21,11 @@ export default function Input({label, placeholder, type, formData, setFromData, 
       </label>
       {star ?
         <input className={classes.input} type={type} placeholder={placeholder} required
-          onChange={handleChange} value={formData[label]} name={label}
+          onChange={handleChange} defaultValue={formData[label]} name={label}
         />
         :
         <input className={classes.input} type={type} placeholder={placeholder} 
-          onChange={handleChange} value={formData[label]} name={label}
+          onChange={handleChange} defaultValue={formData[label]} name={label}
         />
       }
     </div>

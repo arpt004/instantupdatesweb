@@ -10,6 +10,7 @@ import LeftSideBar from './LeftSideBar/LeftSideBar'
 import { splitByCategory } from '../utils/commonFunctions'
 import { fetchAllData } from '../utils/fetchApiHelper'
 import { jainsKartAllData } from "@/redux/actions/jainsKartAllData";
+import Associate from '@/components/Associates/associate';
 // import { ProductDetails } from '../Constants/ProductData.json'
 
 
@@ -50,7 +51,10 @@ const JainKartBody = () => {
   return (
     <div className={classes.mainBodyContainer}>
       <LeftSideBar categories={Object.keys(categories)} filterSection={false} />
-      <div className={classes.categorySection}>            
+      <div className={classes.categorySection}>   
+        <div>
+          <Associate />
+        </div>         
         {Object.keys(categories).map((category, index) => (
           <div key={index}>
             <div className={classes.categoryHeader} >
