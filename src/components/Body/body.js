@@ -9,6 +9,7 @@ import Notes from './notes/notes';
 import Loader from '../common/Loader/loader';
 import Message from '../common/Message/message';
 import Header from '../header/header';
+import Associate from '../Associates/associate';
 
 export default function Body() {
 
@@ -91,6 +92,7 @@ export default function Body() {
 
             <div className={classes.container}> 
                 <Notes />
+                <div className={classes.associateComponent}> <Associate /> </div>
                 <NewsList newsData={news} setNews={setNews} setMessage={setMessage} setMessageData={setMessageData} />
 
                 { message && <Message type={messageData.type} message={messageData.message} onClose={() => setMessage(false)}/>}
